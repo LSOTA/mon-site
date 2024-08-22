@@ -116,14 +116,14 @@
             text-align: center;
         }
 
-        .experience, .skills, .services, .portfolio {
+        .experience, .skills, .services {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             gap: 20px;
         }
 
-        .experience-item, .skill-item, .service-item, .portfolio-item {
+        .experience-item, .skill-item, .service-item {
             width: calc(50% - 20px);
             background-color: #f0f2f5;
             margin-bottom: 20px;
@@ -135,22 +135,15 @@
         }
 
         .experience-item p {
-            line-height: 1.5;  /* Réduit l'espacement entre les lignes pour plus de compacité */
-            text-align: left;  /* Aligne le texte à gauche */
-            margin-bottom: 10px; /* Réduit l'espacement entre les paragraphes */
-            white-space: pre-line; /* Respecte les sauts de ligne dans le texte */
+            line-height: 1.5;
+            text-align: left;
+            margin-bottom: 10px;
+            white-space: pre-line;
         }
 
-        .experience-item:hover, .skill-item:hover, .service-item:hover, .portfolio-item:hover {
+        .experience-item:hover, .skill-item:hover, .service-item:hover {
             transform: translateY(-5px);
             box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3), -10px -10px 30px rgba(255, 255, 255, 0.7);
-        }
-
-        .portfolio-item img {
-            max-width: 100%;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         footer {
@@ -254,6 +247,45 @@
             background-color: #3e8e41;
         }
 
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .sidebar a {
+                text-align: center;
+                float: none;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+                width: 100%;
+            }
+
+            .experience-item, .skill-item, .service-item {
+                width: 100%;
+            }
+
+            header {
+                padding: 60px 20px 40px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .contact-form {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -263,12 +295,12 @@
         <a href="#experience">Expérience</a>
         <a href="#skills">Compétences</a>
         <a href="#services">Services</a>
-        <!-- Renommer Portfolio en Article -->
         <div class="dropdown">
-            <a href="#article">Article</a>
+            <a class="dropbtn" href="#">Articles</a>
             <div class="dropdown-content">
-                <a href="#article1">Article 1</a>
-                <a href="#article2">Article 2</a>
+                <a href="#">Article 1</a>
+                <a href="#">Article 2</a>
+                <a href="#">Article 3</a>
             </div>
         </div>
         <a href="#contact">Contact</a>
