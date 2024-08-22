@@ -16,39 +16,64 @@
             align-items: center;
         }
 
-        /* Menu */
         .sidebar {
             width: 100%;
             background-color: #1e1e2f;
-            padding: 10px 0;
+            padding: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             display: flex;
             justify-content: space-around;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
         }
 
         .sidebar a {
-            padding: 10px;
             text-decoration: none;
-            font-size: 1em;
+            font-size: 1.1em;
             color: #a0a0c0;
+            padding: 10px 20px;
             transition: 0.3s;
-            border-radius: 10px;
         }
 
         .sidebar a:hover {
             background-color: #27293d;
             color: #fff;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(60, 60, 90, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1e1e2f;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #a0a0c0;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #27293d;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         .main-content {
-            margin-top: 60px;
-            padding: 20px;
-            width: 100%;
+            width: 90%;
+            padding: 40px;
             max-width: 1200px;
+            transition: margin-left 0.3s ease;
         }
 
         header {
@@ -63,8 +88,8 @@
 
         header img {
             border-radius: 50%;
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
             border: 5px solid white;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -73,26 +98,31 @@
 
         header h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 2.5em;
             font-weight: bold;
             letter-spacing: 1px;
         }
 
         header p {
-            font-size: 1.1em;
+            font-size: 1.2em;
             margin-top: 10px;
             opacity: 0.9;
         }
 
         .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .section-title {
-            font-size: 2em;
+            font-size: 2.5em;
             margin-bottom: 20px;
             color: #4e73df;
             text-align: center;
@@ -101,27 +131,33 @@
         .section-content {
             margin-bottom: 40px;
             line-height: 1.5;
-            font-size: 1em;
+            font-size: 1.1em;
             color: #666;
             text-align: center;
         }
 
         .experience, .skills, .services {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
             gap: 20px;
         }
 
         .experience-item, .skill-item, .service-item {
-            width: 100%;
+            width: calc(50% - 20px);
             background-color: #f0f2f5;
             margin-bottom: 20px;
             padding: 20px;
             border-radius: 15px;
-            text-align: center;
+            text-align: left;
             box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2), -7px -7px 20px rgba(255, 255, 255, 0.7);
             transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .experience-item p {
+            line-height: 1.5;
+            margin-bottom: 10px;
+            white-space: pre-line;
         }
 
         .experience-item:hover, .skill-item:hover, .service-item:hover {
@@ -129,50 +165,9 @@
             box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3), -10px -10px 30px rgba(255, 255, 255, 0.7);
         }
 
-        .contact-form {
-            background-color: #f0f2f5;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2), -7px -7px 20px rgba(255, 255, 255, 0.7);
-            margin-top: 20px;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin: 0;
-            border-radius: 10px;
-            border: none;
-            background-color: #e0e0e0;
-            box-shadow: inset 7px 7px 14px #bebebe, inset -7px -7px 14px #ffffff;
-            font-size: 1em;
-            color: #333;
-        }
-
-        .contact-form button {
-            background-color: #4e73df;
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 1.2em;
-            transition: background-color 0.3s;
-            box-shadow: 5px 5px 10px #3e5ab7, -5px -5px 10px #5e85ff;
-            width: 100%;
-        }
-
-        .contact-form button:hover {
-            background-color: #224abe;
-        }
-
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 20px 0;
             background-color: #1e1e2f;
             color: #a0a0c0;
             margin-top: 40px;
@@ -192,38 +187,37 @@
             color: #4e73df;
         }
 
-        /* Responsive styles */
         @media (min-width: 768px) {
             .sidebar {
-                flex-direction: column;
-                align-items: flex-start;
                 width: 250px;
+                position: fixed;
+                top: 0;
+                left: 0;
                 height: 100%;
-                padding: 20px;
-                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-            }
-
-            .sidebar a {
-                padding: 15px 25px;
-                margin: 10px 0;
-                font-size: 1.1em;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-top: 60px;
             }
 
             .main-content {
                 margin-left: 270px;
             }
+        }
 
-            header {
-                padding: 100px 20px 60px;
+        @media (max-width: 767px) {
+            .experience-item, .skill-item, .service-item {
+                width: 100%;
             }
 
-            header img {
-                width: 150px;
-                height: 150px;
+            .dropdown-content {
+                min-width: 100%;
             }
 
-            header h1 {
-                font-size: 3em;
+            .sidebar {
+                flex-direction: row;
+                overflow-x: auto;
+                padding: 10px;
             }
         }
     </style>
@@ -235,6 +229,13 @@
         <a href="#experience">Expérience</a>
         <a href="#skills">Compétences</a>
         <a href="#services">Services</a>
+        <div class="dropdown">
+            <a href="#articles">Articles</a>
+            <div class="dropdown-content">
+                <a href="#">Article 1</a>
+                <a href="#">Article 2</a>
+            </div>
+        </div>
         <a href="#contact">Contact</a>
     </div>
 
@@ -276,40 +277,6 @@
                             Suivi des travaux d'améliorations, documentation et FAQ<br>
                             Évolution vers management d'équipe
                         </p>
-                    </div>
-                    <div class="experience-item">
-                        <h3>Hermès (Mission Groupe Hermès)</h3>
-                        <p><strong>Technicien Support Proximité</strong> - Juin 2022 - Oct. 2022 (5 mois)</p>
-                        <p>
-                            Préparation/Masterisation des postes de travail<br>
-                            Gestion logistique : préparation des colis à expédier sur les sites et remise aux équipes chargées des expéditions<br>
-                            Mise à jour quotidienne du reporting d'avancement pour sécuriser les déploiements<br>
-                            Recette des installations effectuées & rédaction d'un PV de recette validant l'état opérationnel de chaque matériel préparé
-                        </p>
-                    </div>
-                    <div class="experience-item">
-                        <h3>Consort NT</h3>
-                        <p><strong>Technicien Support de Proximité</strong> - Mars 2022 - Oct. 2022 (8 mois)</p>
-                        <p>Compétences : Matériel informatique et Active Directory</p>
-                    </div>
-                    <div class="experience-item">
-                        <h3>SFR</h3>
-                        <p><strong>Technicien Support (Helpdesk)</strong> - Mars 2022 - Juin 2022 (4 mois)</p>
-                        <p>
-                            Répondre à Utilisateur par téléphone<br>
-                            Création de ticket sur logiciel de ticketing<br>
-                            Diagnostic et résolution de problème<br>
-                            Installation de matériel informatique<br>
-                            Escalader le ticket au niveau supérieur
-                        </p>
-                    </div>
-                    <div class="experience-item">
-                        <h3>FOOTBALL CLUB LONGJUMEAU</h3>
-                        <p><strong>Football Coach</strong> - Sept. 2015 - Août 2017 (2 ans)</p>
-                    </div>
-                    <div class="experience-item">
-                        <h3>Formation District Essonne Foot</h3>
-                        <p><strong>U9 - MODULE 7-8 ANS</strong> - Mai 2016 - Juin 2016 (2 mois)</p>
                     </div>
                 </div>
             </section>
