@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +12,9 @@
             margin: 0;
             padding: 0;
             color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
-        /* Sidebar */
+        /* Sidebar - version web */
         .sidebar {
             height: 100%;
             width: 250px;
@@ -29,7 +27,8 @@
             transition: width 0.3s ease;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            justify-content: flex-start;
+            align-items: flex-start;
         }
 
         .sidebar a {
@@ -41,8 +40,6 @@
             transition: 0.3s;
             margin: 10px 0;
             border-radius: 10px;
-            width: 100%;
-            text-align: center;
         }
 
         .sidebar a:hover {
@@ -51,48 +48,13 @@
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(60, 60, 90, 0.2);
         }
 
-        .dropdown-content {
-            display: none;
-            position: relative;
-            background-color: #1e1e2f;
-            min-width: 100%;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .dropdown-content a {
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: center;
-            color: #a0a0c0;
-            border-radius: 10px;
-            width: 100%;
-            transition: background-color 0.3s ease;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #27293d;
-            color: #fff;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: flex;
-        }
-
-        .dropdown {
-            width: 100%;
-        }
-
         .main-content {
             margin-left: 270px;
             padding: 40px;
-            width: calc(100% - 270px);
             transition: margin-left 0.3s ease;
         }
 
+        /* Header */
         header {
             background: linear-gradient(135deg, #4e73df, #224abe);
             color: white;
@@ -129,177 +91,52 @@
             opacity: 0.9;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .section-title {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #4e73df;
-            text-align: center;
-        }
-
-        .section-content {
-            margin-bottom: 40px;
-            line-height: 1.5;
-            font-size: 1.1em;
-            color: #666;
-            text-align: center;
-        }
-
-        .experience, .skills, .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
-        }
-
-        .experience-item, .skill-item, .service-item {
-            width: calc(50% - 20px);
-            background-color: #f0f2f5;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2), -7px -7px 20px rgba(255, 255, 255, 0.7);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .experience-item p {
-            line-height: 1.5;
-            text-align: left;
-            margin-bottom: 10px;
-            white-space: pre-line;
-        }
-
-        .experience-item:hover, .skill-item:hover, .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3), -10px -10px 30px rgba(255, 255, 255, 0.7);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #1e1e2f;
-            color: #a0a0c0;
-            margin-top: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .footer-socials a {
-            color: #a0a0c0;
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 1.5em;
-            transition: color 0.3s;
-        }
-
-        .footer-socials a:hover {
-            color: #4e73df;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            background-color: #f0f2f5;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2), -7px -7px 20px rgba(255, 255, 255, 0.7);
-            margin-top: 20px;
-            width: 100%;
-            max-width: 600px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin: 0;
-            border-radius: 10px;
-            border: none;
-            background-color: #e0e0e0;
-            box-shadow: inset 7px 7px 14px #bebebe, inset -7px -7px 14px #ffffff;
-            font-size: 1em;
-            color: #333;
-        }
-
-        .contact-form button {
-            background-color: #4e73df;
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 1.2em;
-            transition: background-color 0.3s;
-            box-shadow: 5px 5px 10px #3e5ab7, -5px -5px 10px #5e85ff;
-        }
-
-        .contact-form button:hover {
-            background-color: #224abe;
-        }
-
-        /* Responsive adjustments */
+        /* Mobile Styles */
         @media (max-width: 768px) {
             .sidebar {
-                width: 100%;
                 height: auto;
-                position: relative;
-                padding-top: 0;
-                flex-direction: column;
-                align-items: flex-start;
+                width: 100%;
+                position: static;
+                flex-direction: row;
+                justify-content: space-around;
+                padding-top: 10px;
+                box-shadow: none;
             }
 
             .sidebar a {
-                padding: 15px 20px;
-                text-align: left;
+                margin: 0;
+                padding: 10px;
                 font-size: 1em;
+                text-align: center;
+                flex: 1;
             }
 
             .main-content {
                 margin-left: 0;
-                width: 100%;
                 padding: 20px;
             }
 
-            .experience-item, .skill-item, .service-item {
-                width: 100%;
-            }
-        }
-
-        /* Dropdown for mobile */
-        @media (max-width: 768px) {
-            .dropdown-content {
-                display: none;
-                flex-direction: column;
-                position: relative;
-                background-color: #1e1e2f;
-                width: 100%;
+            header {
+                padding: 60px 20px 40px;
+                margin-bottom: 20px;
             }
 
-            .dropdown:hover .dropdown-content {
-                display: flex;
+            header img {
+                width: 120px;
+                height: 120px;
             }
 
-            .dropdown-content a {
-                padding: 10px;
-                text-align: left;
-                font-size: 0.9em;
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Sidebar -->
     <div class="sidebar">
@@ -307,13 +144,7 @@
         <a href="#experience">Expérience</a>
         <a href="#skills">Compétences</a>
         <a href="#services">Services</a>
-        <div class="dropdown">
-            <a href="#">Articles</a>
-            <div class="dropdown-content">
-                <a href="#article1">Article 1</a>
-                <a href="#article2">Article 2</a>
-            </div>
-        </div>
+        <a href="#articles">Articles</a>
         <a href="#contact">Contact</a>
     </div>
 
@@ -453,4 +284,5 @@
         </footer>
     </div>
 </body>
+
 </html>
