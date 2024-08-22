@@ -4,275 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leonard Sota - IT Administrator & Cloud Azure Specialist</title>
+    <!-- Balises meta pour le SEO -->
+    <meta name="description" content="Leonard Sota - IT Administrator spécialisé en Cloud Azure et Microsoft 365. Découvrez mes compétences, expériences et services.">
+    <meta name="keywords" content="Leonard Sota, IT Administrator, Cloud Azure, Microsoft 365, informatique, services IT">
+    <meta name="author" content="Leonard Sota">
     <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f0f2f5;
             margin: 0;
             padding: 0;
-            color: #333;
         }
 
-        /* Sidebar */
+        /* Sidebar styling */
         .sidebar {
-            height: 100%;
-            width: 250px;
             position: fixed;
             top: 0;
             left: 0;
-            background-color: #1e1e2f;
-            padding-top: 20px;
-            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height: 60px;
+            background-color: #1b1e34;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 10;
         }
 
         .sidebar a {
-            padding: 15px 25px;
+            color: #b0b3d6;
             text-decoration: none;
-            font-size: 1.1em;
-            color: #a0a0c0;
-            display: block;
-            transition: 0.3s;
-            margin: 10px 0;
-            border-radius: 10px;
+            font-size: 16px;
+            padding: 15px;
+            transition: all 0.3s ease;
         }
 
         .sidebar a:hover {
-            background-color: #27293d;
-            color: #fff;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(60, 60, 90, 0.2);
+            color: white;
+            background-color: #3b3f58;
+            border-radius: 5px;
         }
 
+        /* Main content container */
         .main-content {
-            margin-left: 270px;
-            padding: 40px;
-            transition: margin-left 0.3s ease;
+            margin-top: 70px; /* Adjust for the fixed sidebar */
+            padding: 20px;
         }
 
         header {
-            background: linear-gradient(135deg, #4e73df, #224abe);
-            color: white;
-            padding: 100px 20px 60px;
             text-align: center;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-            position: relative;
+            margin-bottom: 20px;
         }
 
         header img {
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            width: 150px;
-            height: 150px;
             object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 3em;
-            font-weight: bold;
-            letter-spacing: 1px;
+            margin-top: 10px;
+            font-size: 24px;
+            color: #1b1e34;
         }
 
         header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-            opacity: 0.9;
+            color: #666;
+            font-size: 14px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .section-title {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #4e73df;
-            text-align: center;
-        }
-
-        .section-content {
-            margin-bottom: 40px;
-            line-height: 1.5;
-            font-size: 1.1em;
-            color: #666;
-            text-align: center;
-        }
-
-        .experience, .skills, .services, .portfolio {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
-        }
-
-        .experience-item, .skill-item, .service-item, .portfolio-item {
-            width: calc(50% - 20px);
-            background-color: #f0f2f5;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2), -7px -7px 20px rgba(255, 255, 255, 0.7);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .experience-item p {
-            line-height: 1.5;
-            text-align: left;
+            font-size: 24px;
             margin-bottom: 10px;
-            white-space: pre-line;
-        }
-
-        .experience-item:hover, .skill-item:hover, .service-item:hover, .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3), -10px -10px 30px rgba(255, 255, 255, 0.7);
-        }
-
-        .portfolio-item img {
-            max-width: 100%;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
+            color: #1b1e34;
             text-align: center;
-            padding: 20px 0;
-            background-color: #1e1e2f;
-            color: #a0a0c0;
-            margin-top: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .footer-socials a {
-            color: #a0a0c0;
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 1.5em;
-            transition: color 0.3s;
+        .section-content,
+        .experience,
+        .skills,
+        .services {
+            margin-bottom: 40px;
         }
 
-        .footer-socials a:hover {
-            color: #4e73df;
-        }
-
-        /* Formulaire de contact */
-        .contact-form {
-            background-color: #f0f2f5;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2), -7px -7px 20px rgba(255, 255, 255, 0.7);
-            margin-top: 20px;
-            width: 100%;
-            max-width: 600px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
+        .experience-item,
+        .skill-item,
+        .service-item {
+            background-color: #fff;
             padding: 15px;
-            margin: 0;
-            border-radius: 10px;
-            border: none;
-            background-color: #e0e0e0;
-            box-shadow: inset 7px 7px 14px #bebebe, inset -7px -7px 14px #ffffff;
-            font-size: 1em;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-item h3 {
+            margin-bottom: 5px;
+            font-size: 18px;
             color: #333;
         }
 
+        .experience-item p,
+        .skill-item p,
+        .service-item p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Contact form styling */
+        .contact-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
         .contact-form button {
-            background-color: #4e73df;
+            background-color: #007bff;
             color: white;
-            padding: 15px;
             border: none;
-            border-radius: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
             cursor: pointer;
-            font-size: 1.2em;
-            transition: background-color 0.3s;
-            box-shadow: 5px 5px 10px #3e5ab7, -5px -5px 10px #5e85ff;
         }
 
-        .contact-form button:hover {
-            background-color: #224abe;
+        /* Footer styling */
+        footer {
+            background-color: #1b1e34;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
         }
 
-        /* Dropdown Styles */
-        .dropdown {
-            position: relative;
-            display: inline-block;
+        .footer-socials {
+            margin-top: 10px;
         }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #27293d;
-            min-width: 160px;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: #a0a0c0;
-            padding: 12px 16px;
+        .footer-socials a {
+            color: white;
+            margin: 0 10px;
+            font-size: 18px;
             text-decoration: none;
-            display: block;
-            transition: 0.3s;
         }
 
-        .dropdown-content a:hover {
-            background-color: #4e73df;
-            color: #fff;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Responsive Styles */
+        /* Mobile specific styles */
         @media (max-width: 768px) {
             .sidebar {
-                width: 100%;
                 height: auto;
-                position: relative;
-                display: flex;
+                padding: 10px 0;
                 flex-direction: row;
                 justify-content: space-around;
-                box-shadow: none;
+            }
+
+            .sidebar a {
+                margin: 0;
+                padding: 5px;
+                font-size: 14px;
             }
 
             .main-content {
-                margin-left: 0;
+                padding: 10px;
             }
 
-            header {
-                padding: 60px 20px 40px;
-                margin-bottom: 20px;
+            header h1 {
+                font-size: 20px;
             }
 
-            .experience, .skills, .services, .portfolio {
-                flex-direction: column;
-                align-items: center;
+            header p {
+                font-size: 12px;
             }
 
-            .experience-item, .skill-item, .service-item, .portfolio-item {
-                width: 100%;
+            .section-title {
+                font-size: 20px;
+            }
+
+            .experience-item,
+            .skill-item,
+            .service-item {
+                padding: 10px;
+            }
+
+            .contact-form {
+                padding: 15px;
+                margin: 20px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .contact-form button {
+                font-size: 14px;
             }
 
             footer {
-                border-radius: 0;
+                font-size: 14px;
             }
         }
     </style>
@@ -283,151 +241,92 @@
         <a href="#experience">Expérience</a>
         <a href="#skills">Compétences</a>
         <a href="#services">Services</a>
-        <div class="dropdown">
-            <a href="#articles">Articles</a>
-            <div class="dropdown-content">
-                <a href="#">Article 1</a>
-                <a href="#">Article 2</a>
-                <a href="#">Article 3</a>
-            </div>
-        </div>
+        <a href="#articles">Articles</a>
         <a href="#contact">Contact</a>
     </div>
 
     <div class="main-content">
         <header>
-            <img src="https://github.com/LSOTA/mon-site/raw/main/leo.jpeg"Leonard Sota">
+            <img src="votre_photo.jpg" alt="Leonard Sota">
             <h1>Leonard Sota</h1>
             <p>IT Administrator | Cloud Azure & Certified AZ-900</p>
         </header>
 
-        <div class="container">
-            <section id="about">
-                <h2 class="section-title">À propos de moi</h2>
-                <div class="section-content">
-                    <p>
-                        Passionné par l'informatique, je suis actuellement Responsable Application & Production Support et Administrateur M Cloud | Exchange chez GROUPE RAINBOW PARTNERS. Mon rôle consiste à gérer et optimiser les infrastructures, les applications, et les politiques de sécurité du groupe. Avec une solide formation en technologies Cloud, je me spécialise dans les environnements Azure et M365, et je suis déterminé à apporter une réelle valeur ajoutée à mon entreprise.
-                    </p>
-                </div>
-            </section>
-
-            <section id="experience">
-                <h2 class="section-title">Expérience Professionnelle</h2>
-                <div class="experience">
-                    <div class="experience-item">
-                        <h3>GROUPE RAINBOW PARTNERS</h3>
-                        <p><strong>Administrateur M Cloud | Exchange</strong> - Oct. 2022 - Aujourd'hui</p>
-                        <p>
-                            Gestion Azure, Active Directory, Microsoft Endpoint, VM, M365<br>
-                            Gérer et administrer le parc d'impression (Renouvellement / Optimisation des coûts, Configuration)<br>
-                            Piloter le projet de refonte des infrastructures (Ethernet et Wifi)<br>
-                            Résolution des incidents système et réseau<br>
-                            Gestion applicative et support niveau 1 & 2<br>
-                            Gestion du parc informatique (650 laptops)<br>
-                            Mise en place de la stratégie de conduite du changement<br>
-                            Gestion du Wifi et réseau<br>
-                            Traitement des requêtes<br>
-                            Suivi ticketing avec JIRA et ITSM<br>
-                            Outil d'asset management : Insight<br>
-                            Suivi des travaux d'améliorations, documentation et FAQ<br>
-                            Évolution vers management d'équipe
-                        </p>
-                    </div>
-                    <div class="experience-item">
-                        <h3>Hermès (Mission Groupe Hermès)</h3>
-                        <p><strong>Technicien Support Proximité</strong> - Juin 2022 - Oct. 2022 (5 mois)</p>
-                        <p>
-                            Préparation/Masterisation des postes de travail<br>
-                            Gestion logistique : préparation des colis à expédier sur les sites et remise aux équipes chargées des expéditions<br>
-                            Mise à jour quotidienne du reporting d'avancement pour sécuriser les déploiements<br>
-                            Recette des installations effectuées & rédaction d'un PV de recette validant l'état opérationnel de chaque matériel préparé
-                        </p>
-                    </div>
-                    <div class="experience-item">
-                        <h3>Consort NT</h3>
-                        <p><strong>Technicien Support de Proximité</strong> - Mars 2022 - Oct. 2022 (8 mois)</p>
-                        <p>Compétences : Matériel informatique et Active Directory</p>
-                    </div>
-                    <div class="experience-item">
-                        <h3>SFR</h3>
-                        <p><strong>Technicien Support (Helpdesk)</strong> - Mars 2022 - Juin 2022 (4 mois)</p>
-                        <p>
-                            Répondre à Utilisateur par téléphone<br>
-                            Création de ticket sur logiciel de ticketing<br>
-                            Diagnostic et résolution de problème<br>
-                            Installation de matériel informatique<br>
-                            Escalader le ticket au niveau supérieur
-                        </p>
-                    </div>
-                    <div class="experience-item">
-                        <h3>FOOTBALL CLUB LONGJUMEAU</h3>
-                        <p><strong>Football Coach</strong> - Sept. 2015 - Août 2017 (2 ans)</p>
-                    </div>
-                    <div class="experience-item">
-                        <h3>Formation District Essonne Foot</h3>
-                        <p><strong>U9 - MODULE 7-8 ANS</strong> - Mai 2016 - Juin 2016 (2 mois)</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="skills">
-                <h2 class="section-title">Compétences</h2>
-                <div class="skills">
-                    <div class="skill-item">
-                        <h3>Cloud Computing</h3>
-                        <p>Expertise en Microsoft Azure et M365, gestion d'infrastructures Cloud.</p>
-                    </div>
-                    <div class="skill-item">
-                        <h3>Cyber Sécurité</h3>
-                        <p>Utilisation de Microsoft Defender et Sentinel pour sécuriser les systèmes et prévenir les menaces.</p>
-                    </div>
-                    <div class="skill-item">
-                        <h3>Gestion de Projets IT</h3>
-                        <p>Pilotage de projets de refonte d'infrastructures réseau, gestion du changement.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="services">
-                <h2 class="section-title">Services Offerts</h2>
-                <div class="services">
-                    <div class="service-item">
-                        <h3>Conseil en Informatique</h3>
-                        <p>Fourniture de solutions adaptées à vos besoins IT.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>Récupération de Données</h3>
-                        <p>Assistance dans la récupération de données perdues ou corrompues.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>Installation de Réseaux</h3>
-                        <p>Mise en place de réseaux domestiques ou d'entreprise sécurisés.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section Contact -->
-            <section id="contact">
-                <h2 class="section-title">Contact</h2>
-                <div class="contact-form">
-                    <form action="https://formspree.io/f/mzzpjwke" method="POST">
-                        <input type="text" name="name" placeholder="Votre nom" required>
-                        <input type="email" name="email" placeholder="Votre email" required>
-                        <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
-                        <button type="submit">Envoyer</button>
-                    </form>
-                </div>
-            </section>
-        </div>
-
-        <footer>
-            <p>&copy; 2024 Leonard Sota - Tous droits réservés</p>
-            <div class="footer-socials">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
+        <section id="about" class="container">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="section-content">
+                <p>Passionné par l'informatique, je suis actuellement Responsable Application & Production Support et Administrateur M Cloud I Exchange chez GROUPE RAINBOW PARTNERS. Mon rôle consiste à gérer et optimiser les infrastructures, les applications, et les politiques de sécurité du groupe. Avec une solide formation en technologies Cloud, je me spécialise dans les environnements Azure et M365, et je suis déterminé à apporter une réelle valeur ajoutée à mon entreprise.</p>
             </div>
-        </footer>
+        </section>
+
+        <section id="experience" class="container experience">
+            <h2 class="section-title">Expérience Professionnelle</h2>
+
+            <div class="experience-item">
+                <h3>GROUPE RAINBOW PARTNERS</h3>
+                <p><strong>Administrateur M Cloud I Exchange</strong> - Oct. 2022 - Aujourd'hui</p>
+                <p>Gestion Azure, Active Directory, Microsoft Endpoint, VM, M365</p>
+                <p>Gérer et administrer le parc d'impression (Renouvellement / Optimisation des coûts, Configuration)</p>
+                <p>Piloter le projet de refonte des infrastructures (Ethernet et Wifi)</p>
+                <p>Résolution des incidents système et réseau</p>
+                <p>Gestion applicative et support niveau 1 & 2</p>
+                <p>Gestion du parc informatique (650 laptops)</p>
+                <p>Mise en place de la stratégie de conduite du changement</p>
+                <p>Gestion du Wifi et réseau</p>
+                <p>Traitement des requêtes</p>
+                <p>Suivi ticketing avec JIRA et ITSM</p>
+                <p>Outil d'asset management : Insight</p>
+                <p>Suivi des travaux d'améliorations, documentation et FAQ</p>
+                <p>Évolution vers management d'équipe</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Hermès (Mission Groupe Hermès)</h3>
+                <p><strong>Technicien Support Proximité</strong> - Juin 2022 - Oct. 2022 (5 mois)</p>
+                <p>Préparation/Masterisation des postes de travail</p>
+                <p>Gestion logistique : préparation des colis à expédier sur les sites et remise aux équipes chargées des expéditions</p>
+                <p>Mise à jour quotidienne du reporting d'avancement pour sécuriser les déploiements</p>
+                <p>Recette des installations effectuées & rédaction d'un PV de recette validant</p>
+            </div>
+        </section>
+
+        <section id="skills" class="container skills">
+            <h2 class="section-title">Compétences</h2>
+            <div class="skill-item">
+                <p>Administration Azure, Microsoft 365, Active Directory, Exchange Online, Gestion des infrastructures réseaux, Sécurité des systèmes, Cloud Computing, Gestion de projets IT, Virtualisation (VMware, Hyper-V), Gestion de la migration vers le Cloud, Déploiement de solutions Office 365.</p>
+            </div>
+        </section>
+
+        <section id="services" class="container services">
+            <h2 class="section-title">Services</h2>
+            <div class="service-item">
+                <p>Mise en place de réseaux domestiques ou d'entreprise sécurisés.</p>
+            </div>
+        </section>
+
+        <section id="articles" class="container">
+            <h2 class="section-title">Articles</h2>
+            <p>Vos articles apparaîtront ici...</p>
+        </section>
+
+        <section id="contact" class="container contact-form">
+            <h2 class="section-title">Contact</h2>
+            <form action="https://formspree.io/f/mzzpjwke" method="POST">
+                <input type="text" name="name" placeholder="Votre nom" required>
+                <input type="email" name="email" placeholder="Votre email" required>
+                <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Leonard Sota - Tous droits réservés</p>
+        <div class="footer-socials">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
 </body>
 </html>
