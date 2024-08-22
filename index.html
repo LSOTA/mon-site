@@ -187,8 +187,6 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .contact-form input, .contact-form textarea {
@@ -219,40 +217,43 @@
             background-color: #224abe;
         }
 
-        /* Responsive adjustments */
-        @media screen and (max-width: 768px) {
-            .main-content {
-                margin-left: 0;
-                padding: 20px;
-                width: 100%;
-            }
-
-            .sidebar {
-                width: 100%;
-                height: auto;
-                padding: 10px 0;
-                position: relative;
-            }
-
-            .sidebar a {
-                text-align: center;
-                padding: 10px 15px;
-                font-size: 1em;
-            }
-
-            header {
-                padding: 60px 20px 40px;
-            }
-
-            .experience-item, .skill-item, .service-item, .portfolio-item {
-                width: 100%;
-            }
-
-            .contact-form {
-                width: 90%; /* Réduire légèrement la largeur pour une meilleure présentation sur mobile */
-                padding: 10px; /* Réduire le padding pour économiser de l'espace */
-            }
+        /* Dropdown Button */
+        .dropdown {
+            position: relative;
+            display: inline-block;
         }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Change the color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+
     </style>
 </head>
 <body>
@@ -262,7 +263,14 @@
         <a href="#experience">Expérience</a>
         <a href="#skills">Compétences</a>
         <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
+        <!-- Renommer Portfolio en Article -->
+        <div class="dropdown">
+            <a href="#article">Article</a>
+            <div class="dropdown-content">
+                <a href="#article1">Article 1</a>
+                <a href="#article2">Article 2</a>
+            </div>
+        </div>
         <a href="#contact">Contact</a>
     </div>
 
@@ -374,23 +382,6 @@
                     <div class="service-item">
                         <h3>Installation de Réseaux</h3>
                         <p>Mise en place de réseaux domestiques ou d'entreprise sécurisés.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section Portfolio -->
-            <section id="portfolio">
-                <h2 class="section-title">Portfolio</h2>
-                <div class="portfolio">
-                    <div class="portfolio-item">
-                        <img src="projet1.jpg" alt="Projet 1">
-                        <h3>Projet 1</h3>
-                        <p>Description du projet 1.</p>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="projet2.jpg" alt="Projet 2">
-                        <h3>Projet 2</h3>
-                        <p>Description du projet 2.</p>
                     </div>
                 </div>
             </section>
