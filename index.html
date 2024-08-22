@@ -9,7 +9,7 @@
     <meta name="description" content="Leonard Sota - IT Administrator spécialisé en Cloud Azure et Microsoft 365. Découvrez mes compétences, expériences et services.">
     <meta name="keywords" content="Leonard Sota, IT Administrator, Cloud Azure, Microsoft 365, informatique, services IT">
     <meta name="author" content="Leonard Sota">
-    
+
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -223,6 +223,41 @@
             background-color: #224abe;
         }
 
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .sidebar a {
+                margin: 5px 0;
+                padding: 10px;
+                font-size: 0.9em;
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 20px;
+            }
+            header {
+                padding: 60px 20px 40px;
+                margin-bottom: 20px;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            .experience-item, .skill-item, .service-item, .portfolio-item {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -369,7 +404,7 @@
             <section id="contact">
                 <h2 class="section-title">Contact</h2>
                 <div class="contact-form">
-                    <<form action="https://formspree.io/f/mzzpjwke" method="POST">
+                    <form action="https://formspree.io/f/mzzpjwke" method="POST">
                         <input type="text" name="name" placeholder="Votre nom" required>
                         <input type="email" name="email" placeholder="Votre email" required>
                         <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
