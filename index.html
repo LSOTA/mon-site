@@ -24,21 +24,25 @@
             top: 0;
             left: 0;
             background-color: #1e1e2f;
-            padding-top: 40px; /* Augmente l'espace en haut */
+            padding-top: 20px;
             box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
             transition: width 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .sidebar a {
-            padding: 20px 25px; /* Augmente le padding pour un meilleur espacement */
+            padding: 15px 25px;
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: #a0a0c0;
             display: block;
             transition: 0.3s;
-            margin: 15px 0; /* Ajoute un espacement entre les éléments */
+            margin: 10px 0;
             border-radius: 10px;
-            text-align: center; /* Centre le texte */
+            width: 100%;
+            text-align: center;
         }
 
         .sidebar a:hover {
@@ -47,38 +51,39 @@
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(60, 60, 90, 0.2);
         }
 
-        /* Dropdown dans le menu */
-        .dropdown {
-            position: relative;
-            display: block;
-        }
-
-        .dropbtn {
-            width: 100%;
-            text-align: center;
-        }
-
         .dropdown-content {
             display: none;
-            position: absolute;
+            position: relative;
             background-color: #1e1e2f;
             min-width: 100%;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1;
+            flex-direction: column;
+            align-items: center;
         }
 
         .dropdown-content a {
-            padding: 15px 25px;
+            padding: 12px 16px;
+            text-decoration: none;
             display: block;
-            text-align: left;
+            text-align: center;
             color: #a0a0c0;
+            border-radius: 10px;
+            width: 100%;
+            transition: background-color 0.3s ease;
         }
 
         .dropdown-content a:hover {
             background-color: #27293d;
+            color: #fff;
         }
 
         .dropdown:hover .dropdown-content {
-            display: block;
+            display: flex;
+        }
+
+        .dropdown {
+            width: 100%;
         }
 
         .main-content {
@@ -151,7 +156,7 @@
             text-align: center;
         }
 
-        .experience, .skills, .services, .portfolio {
+        .experience, .skills, .services {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
@@ -181,13 +186,6 @@
             box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3), -10px -10px 30px rgba(255, 255, 255, 0.7);
         }
 
-        .portfolio-item img {
-            max-width: 100%;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
         footer {
             text-align: center;
             padding: 20px 0;
@@ -210,7 +208,7 @@
             color: #4e73df;
         }
 
-        /* Formulaire de contact */
+        /* Contact Form */
         .contact-form {
             background-color: #f0f2f5;
             padding: 20px;
@@ -252,20 +250,21 @@
             background-color: #224abe;
         }
 
-        /* Responsive design pour mobile */
+        /* Responsive adjustments */
         @media (max-width: 768px) {
             .sidebar {
                 width: 100%;
                 height: auto;
                 position: relative;
-                padding: 20px;
-                text-align: center;
+                padding-top: 0;
+                flex-direction: column;
+                align-items: flex-start;
             }
 
             .sidebar a {
-                padding: 15px;
-                margin: 10px 0;
-                font-size: 1.5em;
+                padding: 15px 20px;
+                text-align: left;
+                font-size: 1em;
             }
 
             .main-content {
@@ -277,18 +276,26 @@
             .experience-item, .skill-item, .service-item {
                 width: 100%;
             }
+        }
 
-            header img {
-                width: 120px;
-                height: 120px;
+        /* Dropdown for mobile */
+        @media (max-width: 768px) {
+            .dropdown-content {
+                display: none;
+                flex-direction: column;
+                position: relative;
+                background-color: #1e1e2f;
+                width: 100%;
             }
 
-            header h1 {
-                font-size: 2.5em;
+            .dropdown:hover .dropdown-content {
+                display: flex;
             }
 
-            header p {
-                font-size: 1em;
+            .dropdown-content a {
+                padding: 10px;
+                text-align: left;
+                font-size: 0.9em;
             }
         }
     </style>
@@ -301,10 +308,10 @@
         <a href="#skills">Compétences</a>
         <a href="#services">Services</a>
         <div class="dropdown">
-            <a href="#" class="dropbtn">Articles</a>
+            <a href="#">Articles</a>
             <div class="dropdown-content">
-                <a href="#">Article 1</a>
-                <a href="#">Article 2</a>
+                <a href="#article1">Article 1</a>
+                <a href="#article2">Article 2</a>
             </div>
         </div>
         <a href="#contact">Contact</a>
