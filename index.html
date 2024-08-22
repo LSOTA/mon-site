@@ -16,70 +16,74 @@
             align-items: center;
         }
 
+        /* Sidebar for Desktop */
         .sidebar {
-            width: 100%;
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
             background-color: #1e1e2f;
-            padding: 20px 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            display: flex;
-            justify-content: space-around;
+            padding-top: 20px;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+            transition: width 0.3s ease;
+            display: none;
         }
 
         .sidebar a {
+            padding: 15px 25px;
             text-decoration: none;
             font-size: 1.1em;
             color: #a0a0c0;
-            padding: 10px 20px;
+            display: block;
             transition: 0.3s;
+            margin: 10px 0;
+            border-radius: 10px;
         }
 
         .sidebar a:hover {
             background-color: #27293d;
             color: #fff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(60, 60, 90, 0.2);
         }
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
+        /* Top Navigation for Mobile */
+        .top-nav {
+            width: 100%;
             background-color: #1e1e2f;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
         }
 
-        .dropdown-content a {
-            color: #a0a0c0;
-            padding: 12px 16px;
+        .top-nav a {
+            padding: 10px;
             text-decoration: none;
+            font-size: 1em;
+            color: #a0a0c0;
             display: block;
-            text-align: left;
+            text-align: center;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
-        .dropdown-content a:hover {
+        .top-nav a:hover {
             background-color: #27293d;
+            color: #fff;
         }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
+        /* Main Content */
         .main-content {
-            width: 90%;
+            margin: 0 auto;
             padding: 40px;
             max-width: 1200px;
-            transition: margin-left 0.3s ease;
         }
 
         header {
             background: linear-gradient(135deg, #4e73df, #224abe);
             color: white;
-            padding: 60px 20px;
+            padding: 100px 20px 60px;
             text-align: center;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -98,7 +102,7 @@
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
             font-weight: bold;
             letter-spacing: 1px;
         }
@@ -110,15 +114,10 @@
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
             background-color: #fff;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 20px;
         }
 
         .section-title {
@@ -136,33 +135,23 @@
             text-align: center;
         }
 
-        .experience, .skills, .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
+        .experience {
+            text-align: center;
         }
 
-        .experience-item, .skill-item, .service-item {
-            width: calc(50% - 20px);
+        .experience-item {
             background-color: #f0f2f5;
             margin-bottom: 20px;
             padding: 20px;
             border-radius: 15px;
-            text-align: left;
+            text-align: center;
             box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2), -7px -7px 20px rgba(255, 255, 255, 0.7);
-            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .experience-item p {
             line-height: 1.5;
-            margin-bottom: 10px;
+            text-align: left;
             white-space: pre-line;
-        }
-
-        .experience-item:hover, .skill-item:hover, .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3), -10px -10px 30px rgba(255, 255, 255, 0.7);
         }
 
         footer {
@@ -187,17 +176,56 @@
             color: #4e73df;
         }
 
-        @media (min-width: 768px) {
+        /* Formulaire de contact */
+        .contact-form {
+            background-color: #f0f2f5;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2), -7px -7px 20px rgba(255, 255, 255, 0.7);
+            margin-top: 20px;
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 0 auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            background-color: #e0e0e0;
+            box-shadow: inset 7px 7px 14px #bebebe, inset -7px -7px 14px #ffffff;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .contact-form button {
+            background-color: #4e73df;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+            box-shadow: 5px 5px 10px #3e5ab7, -5px -5px 10px #5e85ff;
+        }
+
+        .contact-form button:hover {
+            background-color: #224abe;
+        }
+
+        @media screen and (min-width: 768px) {
+            /* Show Sidebar on Desktop */
             .sidebar {
-                width: 250px;
-                position: fixed;
-                top: 0;
-                left: 0;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                padding-top: 60px;
+                display: block;
+            }
+
+            .top-nav {
+                display: none;
             }
 
             .main-content {
@@ -205,37 +233,36 @@
             }
         }
 
-        @media (max-width: 767px) {
-            .experience-item, .skill-item, .service-item {
-                width: 100%;
+        @media screen and (max-width: 767px) {
+            /* Top Navigation for Mobile */
+            .top-nav {
+                display: flex;
             }
 
-            .dropdown-content {
-                min-width: 100%;
-            }
-
-            .sidebar {
-                flex-direction: row;
-                overflow-x: auto;
-                padding: 10px;
+            .main-content {
+                padding-top: 70px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Sidebar -->
+    <!-- Sidebar for Desktop -->
     <div class="sidebar">
         <a href="#about">À propos</a>
         <a href="#experience">Expérience</a>
         <a href="#skills">Compétences</a>
         <a href="#services">Services</a>
-        <div class="dropdown">
-            <a href="#articles">Articles</a>
-            <div class="dropdown-content">
-                <a href="#">Article 1</a>
-                <a href="#">Article 2</a>
-            </div>
-        </div>
+        <a href="#articles">Articles</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Top Navigation for Mobile -->
+    <div class="top-nav">
+        <a href="#about">À propos</a>
+        <a href="#experience">Expérience</a>
+        <a href="#skills">Compétences</a>
+        <a href="#services">Services</a>
+        <a href="#articles">Articles</a>
         <a href="#contact">Contact</a>
     </div>
 
@@ -278,6 +305,32 @@
                             Évolution vers management d'équipe
                         </p>
                     </div>
+                    <div class="experience-item">
+                        <h3>Hermès (Mission Groupe Hermès)</h3>
+                        <p><strong>Technicien Support Proximité</strong> - Juin 2022 - Oct. 2022 (5 mois)</p>
+                        <p>
+                            Préparation/Masterisation des postes de travail<br>
+                            Gestion logistique : préparation des colis à expédier sur les sites et remise aux équipes chargées des expéditions<br>
+                            Mise à jour quotidienne du reporting d'avancement pour sécuriser les déploiements<br>
+                            Recette des installations effectuées & rédaction d'un PV de recette validant l'état opérationnel de chaque matériel préparé
+                        </p>
+                    </div>
+                    <div class="experience-item">
+                        <h3>Consort NT</h3>
+                        <p><strong>Technicien Support de Proximité</strong> - Mars 2022 - Oct. 2022 (8 mois)</p>
+                        <p>Compétences : Matériel informatique et Active Directory</p>
+                    </div>
+                    <div class="experience-item">
+                        <h3>SFR</h3>
+                        <p><strong>Technicien Support (Helpdesk)</strong> - Mars 2022 - Juin 2022 (4 mois)</p>
+                        <p>
+                            Répondre à Utilisateur par téléphone<br>
+                            Création de ticket sur logiciel de ticketing<br>
+                            Diagnostic et résolution de problème<br>
+                            Installation de matériel informatique<br>
+                            Escalader le ticket au niveau supérieur
+                        </p>
+                    </div>
                 </div>
             </section>
 
@@ -314,6 +367,14 @@
                         <h3>Installation de Réseaux</h3>
                         <p>Mise en place de réseaux domestiques ou d'entreprise sécurisés.</p>
                     </div>
+                </div>
+            </section>
+
+            <!-- Section Articles -->
+            <section id="articles">
+                <h2 class="section-title">Articles</h2>
+                <div class="articles">
+                    <p>Vos articles apparaîtront ici...</p>
                 </div>
             </section>
 
