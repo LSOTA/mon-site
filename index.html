@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,33 +16,26 @@
             align-items: center;
         }
 
-        /* Sidebar */
+        /* Menu */
         .sidebar {
-            height: 100%;
-            width: 250px;
+            width: 100%;
+            background-color: #1e1e2f;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-around;
             position: fixed;
             top: 0;
             left: 0;
-            background-color: #1e1e2f;
-            padding-top: 20px;
-            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-            transition: width 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            z-index: 10;
+            z-index: 1000;
         }
 
         .sidebar a {
-            padding: 15px 25px;
+            padding: 10px;
             text-decoration: none;
-            font-size: 1.1em;
+            font-size: 1em;
             color: #a0a0c0;
-            display: block;
             transition: 0.3s;
-            margin: 10px 0;
             border-radius: 10px;
-            width: 100%;
         }
 
         .sidebar a:hover {
@@ -53,62 +45,54 @@
         }
 
         .main-content {
-            margin-left: 270px;
-            padding: 40px;
-            width: calc(100% - 270px);
-            transition: margin-left 0.3s ease;
+            margin-top: 60px;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
         }
 
         header {
             background: linear-gradient(135deg, #4e73df, #224abe);
             color: white;
-            padding: 100px 20px 60px;
+            padding: 60px 20px;
             text-align: center;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             margin-bottom: 40px;
-            position: relative;
         }
 
         header img {
             border-radius: 50%;
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             object-fit: cover;
             border: 5px solid white;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
         }
 
         header h1 {
             margin: 0;
-            font-size: 3em;
+            font-size: 2em;
             font-weight: bold;
             letter-spacing: 1px;
         }
 
         header p {
-            font-size: 1.2em;
+            font-size: 1.1em;
             margin-top: 10px;
             opacity: 0.9;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         .section-title {
-            font-size: 2.5em;
+            font-size: 2em;
             margin-bottom: 20px;
             color: #4e73df;
             text-align: center;
@@ -117,24 +101,20 @@
         .section-content {
             margin-bottom: 40px;
             line-height: 1.5;
-            font-size: 1.1em;
+            font-size: 1em;
             color: #666;
             text-align: center;
         }
 
-        .experience,
-        .skills,
-        .services {
+        .experience, .skills, .services {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            flex-direction: column;
+            align-items: center;
             gap: 20px;
         }
 
-        .experience-item,
-        .skill-item,
-        .service-item {
-            width: calc(50% - 20px);
+        .experience-item, .skill-item, .service-item {
+            width: 100%;
             background-color: #f0f2f5;
             margin-bottom: 20px;
             padding: 20px;
@@ -144,43 +124,11 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .experience-item p {
-            line-height: 1.5;
-            text-align: left;
-            margin-bottom: 10px;
-            white-space: pre-line;
-        }
-
-        .experience-item:hover,
-        .skill-item:hover,
-        .service-item:hover {
+        .experience-item:hover, .skill-item:hover, .service-item:hover {
             transform: translateY(-5px);
             box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3), -10px -10px 30px rgba(255, 255, 255, 0.7);
         }
 
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #1e1e2f;
-            color: #a0a0c0;
-            margin-top: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .footer-socials a {
-            color: #a0a0c0;
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 1.5em;
-            transition: color 0.3s;
-        }
-
-        .footer-socials a:hover {
-            color: #4e73df;
-        }
-
-        /* Formulaire de contact */
         .contact-form {
             background-color: #f0f2f5;
             padding: 20px;
@@ -189,13 +137,11 @@
             margin-top: 20px;
             width: 100%;
             max-width: 600px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .contact-form input,
-        .contact-form textarea {
+        .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 15px;
             margin: 0;
@@ -217,64 +163,71 @@
             font-size: 1.2em;
             transition: background-color 0.3s;
             box-shadow: 5px 5px 10px #3e5ab7, -5px -5px 10px #5e85ff;
+            width: 100%;
         }
 
         .contact-form button:hover {
             background-color: #224abe;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e1e2f;
+            color: #a0a0c0;
+            margin-top: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-socials a {
+            color: #a0a0c0;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .footer-socials a:hover {
+            color: #4e73df;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 768px) {
             .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                padding-top: 10px;
-                padding-bottom: 10px;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 250px;
+                height: 100%;
+                padding: 20px;
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
             }
 
             .sidebar a {
-                margin: 0;
-                padding: 10px;
-                font-size: 1em;
-                text-align: center;
+                padding: 15px 25px;
+                margin: 10px 0;
+                font-size: 1.1em;
             }
 
             .main-content {
-                margin-left: 0;
-                padding: 20px;
+                margin-left: 270px;
             }
 
             header {
-                padding: 60px 20px 40px;
-                margin-bottom: 20px;
+                padding: 100px 20px 60px;
             }
 
             header img {
-                width: 120px;
-                height: 120px;
+                width: 150px;
+                height: 150px;
             }
 
             header h1 {
-                font-size: 2em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            .experience-item,
-            .skill-item,
-            .service-item {
-                width: 100%;
+                font-size: 3em;
             }
         }
     </style>
 </head>
-
 <body>
     <!-- Sidebar -->
     <div class="sidebar">
@@ -282,7 +235,6 @@
         <a href="#experience">Expérience</a>
         <a href="#skills">Compétences</a>
         <a href="#services">Services</a>
-        <a href="#articles">Articles</a>
         <a href="#contact">Contact</a>
     </div>
 
@@ -422,5 +374,4 @@
         </footer>
     </div>
 </body>
-
 </html>
