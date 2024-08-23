@@ -1,1 +1,1 @@
-ce dossier contient toutes les photos du site 
+ce dossier contient toutes les article du site 
