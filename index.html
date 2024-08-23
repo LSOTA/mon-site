@@ -7,30 +7,12 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f0f2f5;
+            background-color: #eaeff7; /* Un gris très clair pour le fond */
             margin: 0;
             padding: 0;
             color: #333;
+            line-height: 1.6; /* Augmenter la lisibilité */
         }
-
-        .about-section {
-    width: 80%; /* Ajuste la largeur du conteneur selon vos besoins */
-    margin: 0 auto; /* Centre le conteneur */
-    border: 2px solid #4e73df; /* Bordure bleue autour de la section */
-    padding: 20px; /* Espacement interne */
-    border-radius: 15px; /* Coins arrondis */
-    background-color: #f0f2f5; /* Couleur de fond légèrement grise */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
-    white-space: normal; /* Permet au texte de se comporter comme un paragraphe classique */
-    word-wrap: break-word; /* Force les mots longs à se couper */
-    overflow-wrap: break-word; /* Support pour les navigateurs modernes */
-    margin-bottom: 40px; /* Espace sous la section */
-        }
-
-        .about-section p {
-            margin-bottom: 20px; /* Ajoute un espace entre les paragraphes */
-        }
-
 
         /* Sidebar */
         .sidebar {
@@ -56,7 +38,7 @@
         }
 
         .sidebar a:hover {
-            background-color: #27293d;
+            background-color: #6a11cb; /* Changer la couleur de fond des liens au survol */
             color: #fff;
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(60, 60, 90, 0.2);
         }
@@ -65,10 +47,11 @@
             margin-left: 270px;
             padding: 40px;
             transition: margin-left 0.3s ease;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Une ombre douce autour du contenu principal */
         }
 
         header {
-            background: linear-gradient(135deg, #4e73df, #224abe);
+            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Un dégradé moderne violet et bleu */
             color: white;
             padding: 100px 20px 60px;
             text-align: center;
@@ -92,7 +75,7 @@
 
         header h1 {
             margin: 0;
-            font-size: 3em;
+            font-size: 2.5em; /* Ajustez la taille du titre pour une meilleure hiérarchie */
             font-weight: bold;
             letter-spacing: 1px;
         }
@@ -107,15 +90,15 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: #ffffff; /* Un fond blanc pour un contraste net */
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .section-title {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #4e73df;
+            font-size: 2em;
+            margin-bottom: 10px; /* Réduire l'espace pour un look plus compact */
+            color: #6a11cb; /* Couleur d'accentuation pour les titres */
             text-align: center;
         }
 
@@ -136,12 +119,12 @@
 
         .experience-item, .skill-item, .service-item, .portfolio-item {
             width: calc(50% - 20px);
-            background-color: #f0f2f5;
+            background-color: #f8f9fa; /* Un gris clair pour les blocs */
             margin-bottom: 20px;
             padding: 20px;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2), -7px -7px 20px rgba(255, 255, 255, 0.7);
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05); /* Une légère ombre pour donner de la profondeur */
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
@@ -153,8 +136,8 @@
         }
 
         .experience-item:hover, .skill-item:hover, .service-item:hover, .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3), -10px -10px 30px rgba(255, 255, 255, 0.7);
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); /* Un effet de shadow plus prononcé pour l’hover */
         }
 
         .portfolio-item img {
@@ -183,7 +166,7 @@
         }
 
         .footer-socials a:hover {
-            color: #4e73df;
+            color: #6a11cb; /* Harmonisation des couleurs des icônes avec les titres */
         }
 
         /* Formulaire de contact */
@@ -204,8 +187,8 @@
             width: 100%;
             padding: 15px;
             margin: 0;
-            border-radius: 10px;
-            border: none;
+            border-radius: 8px; /* Adoucir les angles */
+            border: 1px solid #ccc; /* Ajout d'une bordure discrète */
             background-color: #e0e0e0;
             box-shadow: inset 7px 7px 14px #bebebe, inset -7px -7px 14px #ffffff;
             font-size: 1em;
@@ -213,19 +196,20 @@
         }
 
         .contact-form button {
-            background-color: #4e73df;
+            background-color: #6a11cb;
             color: white;
             padding: 15px;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px; /* Adoucir les angles */
             cursor: pointer;
             font-size: 1.2em;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
             box-shadow: 5px 5px 10px #3e5ab7, -5px -5px 10px #5e85ff;
         }
 
         .contact-form button:hover {
-            background-color: #224abe;
+            background-color: #2575fc;
+            transform: scale(1.05); /* Agrandit légèrement le bouton au survol */
         }
 
         /* Dropdown Styles */
@@ -281,9 +265,8 @@
                 margin-bottom: 20px;
             }
 
-            .experience, .skills, .services, .portfolio {
-                flex-direction: column;
-                align-items: center;
+            .section-title {
+                font-size: 1.8em;
             }
 
             .experience-item, .skill-item, .service-item, .portfolio-item {
@@ -315,7 +298,7 @@
 
     <div class="main-content">
         <header>
-            <img src="https://github.com/LSOTA/mon-site/raw/main/leo.jpeg"Leonard Sota">
+            <img src="https://github.com/LSOTA/mon-site/raw/main/leo.jpeg" alt="Leonard Sota">
             <h1>Leonard Sota</h1>
             <p>IT Administrator | Cloud Azure & Certified AZ-900</p>
         </header>
@@ -323,12 +306,10 @@
         <div class="container">
             <section id="about">
                 <h2 class="section-title">À propos de moi</h2>
-                <div class="section-content about-section">
-                
-                    <p>Passionné par l'informatique, j'occupe actuellement le poste de Responsable des Applications et du Support de Production au sein du Groupe Rainbow Partners.</p>
-                    <p>Mon rôle principal consiste à superviser et à optimiser les infrastructures, les applications, ainsi que les politiques de sécurité du groupe.</p>
-                    <p>Grâce à une solide expertise dans les technologies Cloud, en particulier sur les plateformes Azure et M365, je m'efforce d'apporter une réelle valeur ajoutée à l'entreprise en alignant les solutions technologiques sur les objectifs stratégiques.</p>
-                    
+                <div class="section-content">
+                    <p>
+                        Passionné par l'informatique, j'occupe actuellement le poste de Responsable des Applications et du Support de Production au sein du Groupe Rainbow Partners. Mon rôle principal consiste à superviser et à optimiser les infrastructures, les applications, ainsi que les politiques de sécurité du groupe. Grâce à une solide expertise dans les technologies Cloud, en particulier sur les plateformes Azure et M365, je m'efforce d'apporter une réelle valeur ajoutée à l'entreprise en alignant les solutions technologiques sur les objectifs stratégiques. Mon engagement constant est de garantir la performance, la sécurité et la pérennité des environnements informatiques que je gère.
+                    </p>
                 </div>
             </section>
 
