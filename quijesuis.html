@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonard Sota - IT Administrator & Cloud Azure Specialist</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #eaeff7; /* Un gris très clair pour le fond */
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6; /* Augmenter la lisibilité */
+        }
+
+        /* Sidebar */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #1e1e2f;
+            padding-top: 20px;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 1.1em;
+            color: #a0a0c0;
+            display: block;
+            transition: 0.3s;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+
+        .sidebar a:hover {
+            background-color: #6a11cb; /* Changer la couleur de fond des liens au survol */
+            color: #fff;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(60, 60, 90, 0.2);
+        }
+
+        .main-content {
+            margin-left: 270px;
+            padding: 40px;
+            transition: margin-left 0.3s ease;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Une ombre douce autour du contenu principal */
+        }
+
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Un dégradé moderne violet et bleu */
+            color: white;
+            padding: 100px 20px 60px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        header img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em; /* Ajustez la taille du titre pour une meilleure hiérarchie */
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff; /* Un fond blanc pour un contraste net */
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 10px; /* Réduire l'espace pour un look plus compact */
+            color: #6a11cb; /* Couleur d'accentuation pour les titres */
+            text-align: center;
+        }
+
+        .section-content {
+            margin-bottom: 40px;
+            line-height: 1.5;
+            font-size: 1.1em;
+            color: #666;
+            text-align: center;
+        }
+
+        .experience, .skills, .services, .portfolio {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .experience-item, .skill-item, .service-item, .portfolio-item {
+            width: calc(50% - 20px);
+            background-color: #f8f9fa; /* Un gris clair pour les blocs */
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05); /* Une légère ombre pour donner de la profondeur */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .experience-item p {
+            line-height: 1.5;
+            text-align: left;
+            margin-bottom: 10px;
+            white-space: pre-line;
+        }
+
+        .experience-item:hover, .skill-item:hover, .service-item:hover, .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); /* Un effet de shadow plus prononcé pour l’hover */
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #1e1e2f;
+            color: #a0a0c0;
+            margin-top: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-socials a {
+            color: #a0a0c0;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .footer-socials a:hover {
+            color: #6a11cb; /* Harmonisation des couleurs des icônes avec les titres */
+        }
+
+        /* Formulaire de contact */
+        .contact-form {
+            background-color: #f0f2f5;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.2), -7px -7px 20px rgba(255, 255, 255, 0.7);
+            margin-top: 20px;
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 0;
+            border-radius: 8px; /* Adoucir les angles */
+            border: 1px solid #ccc; /* Ajout d'une bordure discrète */
+            background-color: #e0e0e0;
+            box-shadow: inset 7px 7px 14px #bebebe, inset -7px -7px 14px #ffffff;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .contact-form button {
+            background-color: #6a11cb;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px; /* Adoucir les angles */
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 5px 5px 10px #3e5ab7, -5px -5px 10px #5e85ff;
+        }
+
+        .contact-form button:hover {
+            background-color: #2575fc;
+            transform: scale(1.05); /* Agrandit légèrement le bouton au survol */
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #27293d;
+            min-width: 160px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #a0a0c0;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #4e73df;
+            color: #fff;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                box-shadow: none;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            header {
+                padding: 60px 20px 40px;
+                margin-bottom: 20px;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .experience-item, .skill-item, .service-item, .portfolio-item {
+                width: 100%;
+            }
+
+            footer {
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="#about">À propos</a>
+        <a href="#experience">Expérience</a>
+        <a href="#skills">Compétences</a>
+        <a href="#services">Services</a>
+        <div class="dropdown">
+    
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <img src="https://github.com/LSOTA/mon-site/raw/main/leo.jpeg" alt="Leonard Sota">
+            <h1>Leonard Sota</h1>
+            <p>IT Administrator | Cloud Azure & Certified AZ-900</p>
+        </header>
+
+        <div class="container">
+            <section id="about">
+                <h2 class="section-title">À propos de moi</h2>
+                <div class="section-content">
+                    <p>
+                        Passionné par l'informatique, j'occupe actuellement le poste de Responsable des Applications et du Support de Production au sein du Groupe Rainbow Partners. Mon rôle principal consiste à superviser et à optimiser les infrastructures, les applications, ainsi que les politiques de sécurité du groupe. Grâce à une solide expertise dans les technologies Cloud, en particulier sur les plateformes Azure et M365, je m'efforce d'apporter une réelle valeur ajoutée à l'entreprise en alignant les solutions technologiques sur les objectifs stratégiques. Mon engagement constant est de garantir la performance, la sécurité et la pérennité des environnements informatiques que je gère.
+                    </p>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2 class="section-title">Expérience Professionnelle</h2>
+                <div class="experience">
+                    <div class="experience-item">
+                        <h3>GROUPE RAINBOW PARTNERS</h3>
+                        <p><strong>Administrateur M Cloud | Exchange</strong> - Oct. 2022 - Aujourd'hui</p>
+                        <p>
+                            Gestion Azure, Active Directory, Microsoft Endpoint, VM, M365<br>
+                            Gérer et administrer le parc d'impression (Renouvellement / Optimisation des coûts, Configuration)<br>
+                            Piloter le projet de refonte des infrastructures (Ethernet et Wifi)<br>
+                            Résolution des incidents système et réseau<br>
+                            Gestion applicative et support niveau 1 & 2<br>
+                            Gestion du parc informatique (650 laptops)<br>
+                            Mise en place de la stratégie de conduite du changement<br>
+                            Gestion du Wifi et réseau<br>
+                            Traitement des requêtes<br>
+                            Suivi ticketing avec JIRA et ITSM<br>
+                            Outil d'asset management : Insight<br>
+                            Suivi des travaux d'améliorations, documentation et FAQ<br>
+                            Évolution vers management d'équipe
+                        </p>
+                    </div>
+                    <div class="experience-item">
+                        <h3>Hermès (Mission Groupe Hermès)</h3>
+                        <p><strong>Technicien Support Proximité</strong> - Juin 2022 - Oct. 2022 (5 mois)</p>
+                        <p>
+                            Préparation/Masterisation des postes de travail<br>
+                            Gestion logistique : préparation des colis à expédier sur les sites et remise aux équipes chargées des expéditions<br>
+                            Mise à jour quotidienne du reporting d'avancement pour sécuriser les déploiements<br>
+                            Recette des installations effectuées & rédaction d'un PV de recette validant l'état opérationnel de chaque matériel préparé
+                        </p>
+                    </div>
+                    <div class="experience-item">
+                        <h3>Consort NT</h3>
+                        <p><strong>Technicien Support de Proximité</strong> - Mars 2022 - Oct. 2022 (8 mois)</p>
+                        <p>Compétences : Matériel informatique et Active Directory</p>
+                    </div>
+                    <div class="experience-item">
+                        <h3>SFR</h3>
+                        <p><strong>Technicien Support (Helpdesk)</strong> - Mars 2022 - Juin 2022 (4 mois)</p>
+                        <p>
+                            Répondre à Utilisateur par téléphone<br>
+                            Création de ticket sur logiciel de ticketing<br>
+                            Diagnostic et résolution de problème<br>
+                            Installation de matériel informatique<br>
+                            Escalader le ticket au niveau supérieur
+                        </p>
+                    </div>
+                    <div class="experience-item">
+                        <h3>FOOTBALL CLUB LONGJUMEAU</h3>
+                        <p><strong>Football Coach</strong> - Sept. 2015 - Août 2017 (2 ans)</p>
+                    </div>
+                    <div class="experience-item">
+                        <h3>Formation District Essonne Foot</h3>
+                        <p><strong>U9 - MODULE 7-8 ANS</strong> - Mai 2016 - Juin 2016 (2 mois)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2 class="section-title">Compétences</h2>
+                <div class="skills">
+                    <div class="skill-item">
+                        <h3>Cloud Computing</h3>
+                        <p>Expertise en Microsoft Azure et M365, gestion d'infrastructures Cloud.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Cyber Sécurité</h3>
+                        <p>Utilisation de Microsoft Defender et Sentinel pour sécuriser les systèmes et prévenir les menaces.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Gestion de Projets IT</h3>
+                        <p>Pilotage de projets de refonte d'infrastructures réseau, gestion du changement.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services">
+                <h2 class="section-title">Services Offerts</h2>
+                <div class="services">
+                    <div class="service-item">
+                        <h3>Conseil en Informatique</h3>
+                        <p>Fourniture de solutions adaptées à vos besoins IT.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Récupération de Données</h3>
+                        <p>Assistance dans la récupération de données perdues ou corrompues.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Installation de Réseaux</h3>
+                        <p>Mise en place de réseaux domestiques ou d'entreprise sécurisés.</p>
+                    </div>
+                </div>
+
+        <footer>
+            <p>&copy; 2024 Leonard Sota - Tous droits réservés</p>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
