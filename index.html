@@ -20,6 +20,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: fixed; /* Garde le header fixe en haut */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
 
         .header-left {
@@ -39,12 +43,17 @@
         }
 
         .header-right {
+            position: absolute;
+            right: 200px; /* Déplacer les icônes plus à gauche */
+            top: 50%;
+            transform: translateY(-50%);
             display: flex;
             align-items: center;
         }
 
         .header-right a {
-            margin-left: 15px;
+            margin-left: 10px;
+            margin-right: 0px;
         }
 
         .header-right img {
@@ -57,7 +66,11 @@
             justify-content: center;
             background-color: #444;
             padding: 10px 0;
-            margin-top: 10px;
+            margin-top: 60px;
+            position: fixed; /* Garde la navigation fixe en dessous du header */
+            top: 60px;
+            width: 100%;
+            z-index: 999;
         }
 
         .main-nav a {
@@ -73,7 +86,7 @@
 
         .main-container {
             max-width: 1300px;
-            margin: 0 auto;
+            margin: 140px auto 0 auto; /* Ajusté pour compenser la hauteur du header et de la nav fixes */
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -232,6 +245,13 @@
                 <a href="article6.html">Read more</a>
             </div>
             <!-- Vous pouvez ajouter plus d'articles ici -->
+
+            <div class="article">
+                <img src="article-image6.jpg" alt="Article Image">
+                <h2>Article Title 7</h2>
+                <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
+                <a href="article6.html">Read more</a>
+            </div>
         </div>
 
         <!-- About Me Section -->
