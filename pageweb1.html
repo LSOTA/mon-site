@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Website of Leonard SOTA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333; /* Fond global de la page */
+        }
+
+        .main-header {
+            background-color: #222;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left .logo {
+            max-height: 50px;
+            margin-right: 20px;
+        }
+
+        .header-center h1 {
+            font-size: 24px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-right a {
+            margin-left: 15px;
+        }
+
+        .header-right img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        .main-nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Conteneur principal pour les articles et About Me avec un fond blanc */
+        .content-background {
+            background-color: white; /* Fond blanc */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Style du conteneur des articles */
+        .articles-container {
+            width: 60%; /* Garde la même largeur pour les articles */
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            margin-right: 30px;
+            border-radius: 10px;
+        }
+
+        .article-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .article {
+            width: 48%;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .article:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .article h2 {
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .article p {
+            color: #666;
+        }
+
+        .article a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .article a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style du conteneur About Me */
+        .aboutme-container {
+            width: 35%; /* Largeur de 35% */
+            height: 400px; /* Fixe la hauteur à 400px */
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow-y: auto; /* Ajoute une barre de défilement si le contenu dépasse la hauteur */
+        }
+
+        .aboutme-container img {
+            display: block;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .aboutme-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .aboutme-container p {
+            text-align: justify;
+            color: #555;
+        }
+
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-left">
+        <img src="C:\Users\Compte-Travaille\Music\leo page web\Photo\logo.png" alt="Logo" class="logo">
+        <h1>Official Website of Leonard SOTA</h1>
+    </div>
+    <div class="header-right">
+        <!-- Insérez vos icônes de réseaux sociaux ici -->
+        <a href="https://www.instagram.com/leonardsota/" target="_blank">
+            <img src="C:\Users\Compte-Travaille\Music\leo page web\Photo\instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.youtube.com/@leonardsota3465" target="_blank">
+            <img src="C:\Users\Compte-Travaille\Music\leo page web\Photo\youtube.png" alt="YouTube">
+        </a>
+        <a href="https://github.com/LSOTA" target="_blank">     
+            <img src="C:\Users\Compte-Travaille\Music\leo page web\Photo\github.png" alt="GitHub">
+        </a>
+        <a href="https://www.linkedin.com/in/leonard-s-65a4a1122/" target="_blank">   
+            <img src="C:\Users\Compte-Travaille\Music\leo page web\Photo\linkedin.png" alt="LinkedIn">
+        </a> 
+    </div>
+</header>
+
+<nav class="main-nav">
+    <a href="#">Home</a>
+    <a href="C:\Users\Compte-Travaille\Music\leo page web\àpropos.html">À propos</a>
+    <a href="#">Speaking</a>
+    <a href="C:\Users\Compte-Travaille\Music\leo page web\Formulaire\contact.html">Contact</a>
+</nav>
+
+<!-- Conteneur principal pour les articles et About Me -->
+<div class="content-background">
+    <div class="main-container">
+        <!-- Conteneur pour les articles -->
+        <div class="articles-container">
+            <!-- Première ligne d'articles -->
+            <div class="article-row">
+                <div class="article">
+                    <img src="article-image1.jpg" alt="Article Image">
+                    <h2>Article Title 1</h2>
+                    <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
+                    <a href="article1.html">Read more</a>
+                </div>
+
+                <div class="article">
+                    <img src="article-image2.jpg" alt="Article Image">
+                    <h2>Article Title 2</h2>
+                    <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
+                    <a href="article2.html">Read more</a>
+                </div>
+            </div>
+
+            <!-- Deuxième ligne d'articles -->
+            <div class="article-row">
+                <div class="article">
+                    <img src="article-image3.jpg" alt="Article Image">
+                    <h2>Article Title 3</h2>
+                    <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
+                    <a href="article3.html">Read more</a>
+                </div>
+
+                <div class="article">
+                    <img src="article-image4.jpg" alt="Article Image">
+                    <h2>Article Title 4</h2>
+                    <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
+                    <a href="article4.html">Read more</a>
+                </div>
+            </div>
+
+            <!-- Troisième ligne d'articles -->
+            <div class="article-row">
+                <div class="article">
+                    <img src="article-image5.jpg" alt="Article Image">
+                    <h2>Article Title 5</h2>
+                    <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
+                    <a href="article5.html">Read more</a>
+                </div>
+
+                <div class="article">
+                    <img src="article-image6.jpg" alt="Article Image">
+                    <h2>Article Title 6</h2>
+                    <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
+                    <a href="article6.html">Read more</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conteneur pour About Me -->
+        <div class="aboutme-container">
+            <h2>About Me</h2>
+            <img src="C:\Users\Compte-Travaille\Music\leo page web\Photo\leo.jpeg" alt="Your Photo">
+            <p>Je m'appelle Leonard SOTA. Je suis administrateur Cloud et actuellement Responsable des Applications et du Support de Production au sein du Groupe Rainbow Partners. Mon rôle principal consiste à superviser et à optimiser les infrastructures, les applications, ainsi que les politiques de sécurité du groupe.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
