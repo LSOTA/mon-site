@@ -90,6 +90,7 @@
             padding: 20px;
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         .articles-container {
@@ -172,6 +173,50 @@
             text-align: justify;
             color: #555;
         }
+
+        /* Media Queries pour l'adaptation mobile */
+        @media (max-width: 768px) {
+            .header-left, .header-right {
+                position: static;
+                transform: none;
+                flex: 100%;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+
+            .header-left {
+                justify-content: center;
+            }
+
+            .header-right {
+                justify-content: center;
+            }
+
+            .header-right img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .main-nav {
+                margin-top: 100px;
+            }
+
+            .main-container {
+                margin-top: 200px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .articles-container, .aboutme-container {
+                flex: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .header-center h1 {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
@@ -200,7 +245,7 @@
 
     <nav class="main-nav">
         <a href="#">Home</a>
-        <a href="https://lsota.github.io/mon-site/quijesuis.html">Parcours professionnel</a>
+        <a href="https://lsota.github.io/mon-site/quijesuis.html">Parcours professionel</a>
         <a href="https://lsota.github.io/mon-site/certification.html">Certifications</a>
         <a href="https://lsota.github.io/mon-site/contact.html">Contact</a>
     </nav>
