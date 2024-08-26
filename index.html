@@ -173,6 +173,27 @@
             color: #555;
         }
 
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 24px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        .back-to-top:hover {
+            background-color: #0056b3;
+        }
+
+
         /* Media Queries pour l'adaptation mobile */
         @media (max-width: 768px) {
             .header-left, .header-right {
@@ -248,11 +269,11 @@
         <a href="https://lsota.github.io/mon-site/certification.html">Certifications</a>
         <a href="https://lsota.github.io/mon-site/contact.html">Contact</a>
         <form action="/search" method="GET" style="display: inline-flex; align-items: center; border-radius: 20px; overflow: hidden; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); max-width: 250px;">
-    <input type="text" name="q" placeholder="Rechercher..." style="padding: 8px 10px; border: none; outline: none; flex: 1; font-size: 14px;">
-    <button type="submit" style="padding: 8px 12px; background-color: #007bff; color: white; border: none; cursor: pointer; display: flex; align-items: center;">
-        <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search" style="width: 16px; height: 16px;">
-    </button>
-</form>
+            <input type="text" name="q" placeholder="Rechercher..." style="padding: 8px 10px; border: none; outline: none; flex: 1; font-size: 14px;">
+            <button type="submit" style="padding: 8px 12px; background-color: #007bff; color: white; border: none; cursor: pointer; display: flex; align-items: center;">
+                <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search" style="width: 16px; height: 16px;">
+            </button>
+        </form>        
     </nav>
 
     <div class="main-container">
@@ -312,6 +333,10 @@
                 Support de Production au sein du Groupe Rainbow Partners. Mon rôle principal consiste à superviser et à
                 optimiser les infrastructures, les applications, ainsi que les politiques de sécurité du groupe.</p>
         </div>
+
+        <a href="#top" class="back-to-top">
+            &#8679;
+        </a>        
     </div>
 
 </body>
