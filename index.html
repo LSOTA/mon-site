@@ -193,6 +193,13 @@
             background-color: #0056b3;
         }
 
+         /* CSS global pour toutes les images dans les articles */
+         .article-content img {
+            width: 100px; /* largeur uniforme pour toutes les images */
+            height: 100px; /* hauteur uniforme pour toutes les images */
+            object-fit: cover; /* ajuste l'image pour qu'elle remplisse le cadre sans distorsion */
+        }
+
 
         /* Media Queries pour l'adaptation mobile */
         @media (max-width: 768px) {
@@ -318,10 +325,10 @@
             <!-- Vous pouvez ajouter plus d'articles ici -->
 
             <div class="article">
-                <img src="article-image6.jpg" alt="Article Image">
-                <h2>Article Title 7</h2>
-                <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
-                <a href="article6.html">Read more</a>
+                <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/bit.png" alt="Article Image">
+                <h2>Vue d'ensemble BitLocker</h2>
+                <p>BitLocker est une fonctionnalité de sécurité Windows qui protège vos données en chiffrant vos lecteurs.</p>
+                <a href="https://lsota.github.io/mon-site/Article/Vue-ensemble.html">Read more</a>
             </div>
         </div>
 
