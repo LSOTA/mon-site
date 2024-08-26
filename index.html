@@ -275,6 +275,91 @@
         font-size: 20px; /* Taille de l'icône réduite */
         padding: 8px; /* Réduction du padding */
     }
+    @media (max-width: 768px) {
+    /* Header adjustments */
+    .header-left, .header-right {
+        position: static;
+        transform: none;
+        flex: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .header-center h1 {
+        text-align: center;
+        font-size: 20px; /* Reduce font size for mobile */
+        margin: 10px 0;  /* Reduce margin for better space utilization */
+    }
+
+    .header-right {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .header-right img {
+        width: 18px; /* Reduce icon size */
+        height: 18px;
+    }
+
+    /* Navigation adjustments */
+    .main-nav {
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: center;
+        padding: 10px 0;
+        background-color: #444; /* Ensure background color is consistent */
+    }
+
+    .main-nav a {
+        margin: 5px 0;  /* Reduce spacing between links */
+        font-size: 16px; /* Slightly reduce font size */
+    }
+
+    /* Container adjustments */
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+        padding: 10px;
+    }
+
+    .articles-container, .aboutme-container {
+        flex: 100%; /* Ensure full width for mobile */
+        margin-right: 0;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+
+    .articles-container .article {
+        padding: 10px; /* Reduce padding inside articles */
+    }
+
+    .articles-container .article img {
+        max-width: 100%; /* Ensure images fit within container */
+        height: auto;
+        margin-bottom: 10px; /* Reduce bottom margin */
+    }
+
+    /* About Me section adjustments */
+    .aboutme-container img {
+        width: 120px; /* Reduce profile image size */
+        height: 120px;
+        margin-bottom: 15px; /* Reduce space below image */
+    }
+
+    .aboutme-container h2 {
+        font-size: 20px; /* Reduce heading size */
+    }
+
+    .aboutme-container p {
+        font-size: 14px; /* Reduce paragraph text size */
+    }
+
+    /* Back to top button adjustments */
+    .back-to-top {
+        font-size: 20px; /* Reduce button font size */
+        padding: 8px;
+    }
 }
     </style>
 </head>
