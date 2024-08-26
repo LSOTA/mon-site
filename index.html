@@ -7,217 +7,243 @@
     <title>Official Website Leonard SOTA</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-}
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
 
-.main-header {
-    background-color: #222;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    z-index: 1000;
-}
+        .main-header {
+            background-color: #222;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Garde le header fixe en haut */
+            width: 100%;
+            z-index: 1000;
+            margin-bottom: 20; /* Ajoutez cette ligne si besoin */
+        }
 
-.header-left {
-    display: flex;
-    align-items: center;
-}
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
 
-.header-left .logo {
-    max-height: 50px;
-    margin-right: 20px;
-}
+        .header-left .logo {
+            max-height: 50px;
+            margin-right: 20px;
+        }
 
-.header-center h1 {
-    font-size: 24px;
-    margin: 0;
-    text-align: center;
-}
+        .header-center h1 {
+            font-size: 24px;
+            margin: 0;
+            text-align: center;
+        }
 
-.header-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
+        .header-right {
+            position: absolute;
+            right: 200px; /* Déplacer les icônes plus à gauche */
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+        }
 
-.header-right a {
-    margin-left: 10px;
-}
+        .header-right a {
+            margin-left: 10px;
+            margin-right: 0px;
+        }
 
-.header-right img {
-    width: 24px;
-    height: 24px;
-}
+        .header-right img {
+            width: 24px;
+            height: 24px;
+        }
 
-.main-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #444;
-    padding: 5px 0;
-}
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 5px 0;
+            margin-top: 20px;
+            position: relative; /* Garde la navigation fixe en dessous du header */
+            width: 100%;
+            z-index: 999;
+        }
 
-.main-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
-}
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
 
-.main-nav a:hover {
-    text-decoration: underline;
-}
+        .main-nav a:hover {
+            text-decoration: underline;
+        }
 
-.main-container {
-    max-width: 1300px;
-    margin: 20px auto;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
+        .main-container {
+            max-width: 1300px;
+            margin: 20px auto 0 auto; /* Ajusté pour compenser la hauteur du header et de la nav fixes */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
 
-.articles-container {
-    flex: 1;
-    background-color: white;
-    padding: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    margin-right: 20px;
-}
+        .articles-container {
+            flex: 1;
+            background-color: white;
+            padding: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin-right: 20px;
+        }
 
-.article {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 15px;
-}
+        .article {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
+        }
 
-.article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
+        .article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
 
-.article img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
+        .article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
 
-.article h2 {
-    color: #333;
-    margin-top: 10px;
-}
+        .article h2 {
+            color: #333;
+            margin-top: 10px;
+        }
 
-.article p {
-    color: #666;
-}
+        .article p {
+            color: #666;
+        }
 
-.article a {
-    color: #3498db;
-    text-decoration: none;
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
-}
+        .article a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
 
-.article a:hover {
-    text-decoration: underline;
-}
+        .article a:hover {
+            text-decoration: underline;
+        }
 
-.aboutme-container {
-    flex: 0 0 300px;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    height: fit-content;
-}
+        .aboutme-container {
+            flex: 0 0 300px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            height: fit-content;
+        }
 
-.aboutme-container img {
-    display: block;
-    margin: 0 auto 20px auto;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+        .aboutme-container img {
+            display: block;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
 
-.aboutme-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
+        .aboutme-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
 
-.aboutme-container p {
-    text-align: justify;
-    color: #555;
-}
+        .aboutme-container p {
+            text-align: justify;
+            color: #555;
+        }
 
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 24px;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s;
-}
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 24px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
 
-.back-to-top:hover {
-    background-color: #0056b3;
-}
+        .back-to-top:hover {
+            background-color: #0056b3;
+        }
 
-/* Media Queries pour l'adaptation mobile */
-@media (max-width: 768px) {
-    .header-left, .header-right {
-        flex-direction: column;
-        align-items: center;
-    }
+         /* CSS global pour toutes les images dans les articles */
+         .article-content img {
+            width: 100px; /* largeur uniforme pour toutes les images */
+            height: 100px; /* hauteur uniforme pour toutes les images */
+            object-fit: cover; /* ajuste l'image pour qu'elle remplisse le cadre sans distorsion */
+        }
 
-    .header-left .logo {
-        max-height: 40px;
-        margin-right: 0;
-    }
 
-    .main-nav {
-        flex-direction: column;
-        align-items: center;
-    }
+        /* Media Queries pour l'adaptation mobile */
+        @media (max-width: 768px) {
+            .header-left, .header-right {
+                position: static;
+                transform: none;
+                flex: 100%;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
 
-    .main-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
+            .header-left {
+                justify-content: center;
+            }
 
-    .articles-container, .aboutme-container {
-        flex: 100%;
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
+            .header-right {
+                justify-content: center;
+            }
 
-    .header-right img {
-        width: 20px;
-        height: 20px;
-    }
-}
+            .header-right img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .main-nav {
+                margin-top: 100px;
+            }
+
+            .main-container {
+                margin-top: 200px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .articles-container, .aboutme-container {
+                flex: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .header-center h1 {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
