@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sauvegarde de la clé de récupération BitLocker</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        section {
+            padding: 20px;
+            background: #ffffff;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #35424a;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        section ul li {
+            margin-bottom: 10px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Sauvegarde de la clé de récupération BitLocker</h1>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2>Introduction</h2>
+        <p>Une clé de récupération BitLocker est nécessaire lorsque BitLocker ne peut pas déverrouiller automatiquement un lecteur chiffré dans Windows. Cette clé, qui est un nombre à 48 chiffres, est utilisée pour récupérer l’accès au lecteur.</p>
+
+
+        <h2>Quand devez-vous utiliser la clé de récupération BitLocker ?</h2>
+        <p>Vous pouvez être invité à entrer la clé de récupération BitLocker au démarrage en raison d’un risque de sécurité ou d’une modification matérielle :</p>
+        <ul>
+            <li>Si vous avez oublié le mot de passe de déverrouillage.</li>
+            <li>Si une modification matérielle importante a été détectée.</li>
+        </ul>
+
+        <div class="image-container">
+            <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/bitlocker.png" alt="Exemple de clé de récupération BitLocker">
+        </div>
+
+        <h2>Sauvegarde automatique de la clé de récupération</h2>
+        <p>Dans la plupart des cas, votre clé de récupération BitLocker est automatiquement sauvegardée lors de la première activation de BitLocker :</p>
+        <ul>
+            <li>Si vous utilisez un compte Microsoft, la clé de récupération BitLocker y est généralement attachée et vous pouvez accéder à la clé de récupération en ligne.</li>
+            <li>Si vous utilisez un appareil géré par votre entreprise ou votre établissement scolaire, la clé de récupération BitLocker est généralement sauvegardée et gérée par le service informatique de votre organisation. Cela permet de s’assurer que l’organisation peut vous aider à récupérer vos données si votre appareil n’est pas accessible pour une raison quelconque.</li>
+        </ul>
+
+        <div class="image-container">
+            <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/bitlockerD.png" alt="Sauvegarde automatique de la clé de récupération BitLocker">
+        </div>
+
+        <h2>Conclusion</h2>
+        <p>Il est toujours judicieux de vérifier auprès de votre service informatique les procédures et stratégies spécifiques liées à la récupération BitLocker dans votre organisation. Il est important de vérifier que cette sauvegarde existe et est accessible ou de créer votre propre sauvegarde supplémentaire.</p>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Votre Organisation. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
