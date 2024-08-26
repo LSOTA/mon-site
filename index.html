@@ -7,247 +7,218 @@
     <title>Official Website Leonard SOTA</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
 
-        .main-header {
-            background-color: #222;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            width: 100%;
-            z-index: 1000;
-        }
+.main-header {
+    background-color: #222;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+}
 
-        .header-left {
-            display: flex;
-            align-items: center;
-        }
+.header-left {
+    display: flex;
+    align-items: center;
+}
 
-        .header-left .logo {
-            max-height: 50px;
-            margin-right: 20px;
-        }
+.header-left .logo {
+    max-height: 50px;
+    margin-right: 20px;
+}
 
-        .header-center h1 {
-            font-size: 24px;
-            margin: 0;
-            text-align: center;
-        }
+.header-center h1 {
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+}
 
-        .header-right {
-            display: flex;
-            align-items: center;
-        }
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 
-        .header-right a {
-            margin-left: 10px;
-            margin-right: 0px;
-        }
+.header-right a {
+    margin-left: 10px;
+}
 
-        .header-right img {
-            width: 24px;
-            height: 24px;
-        }
+.header-right img {
+    width: 24px;
+    height: 24px;
+}
 
-        /* Menu Hamburger pour mobile */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
+.main-nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    padding: 5px 0;
+}
 
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 4px 0;
-        }
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
 
-        .main-nav {
-            display: flex;
-            justify-content: center;
-            background-color: #444;
-            padding: 5px 0;
-            margin-top: 20px;
-        }
+.main-nav a:hover {
+    text-decoration: underline;
+}
 
-        .main-nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-        }
+.main-container {
+    max-width: 1300px;
+    margin: 20px auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
-        .main-nav a:hover {
-            text-decoration: underline;
-        }
+.articles-container {
+    flex: 1;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-right: 20px;
+}
 
-        .main-container {
-            max-width: 1300px;
-            margin: 20px auto;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
+.article {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 15px;
+}
 
-        .articles-container {
-            flex: 1;
-            background-color: white;
-            padding: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            margin-right: 20px;
-        }
+.article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
 
-        .article {
-            border: 1px solid #ddd;
-            padding: 15px;
-            border-radius: 10px;
-            background-color: #f9f9f9;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 20px;
-        }
+.article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
 
-        .article:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
+.article h2 {
+    color: #333;
+    margin-top: 10px;
+}
 
-        .article img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
+.article p {
+    color: #666;
+}
 
-        .article h2 {
-            color: #333;
-            margin-top: 10px;
-        }
+.article a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
 
-        .article p {
-            color: #666;
-        }
+.article a:hover {
+    text-decoration: underline;
+}
 
-        .article a {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
+.aboutme-container {
+    flex: 0 0 300px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    height: fit-content;
+}
 
-        .article a:hover {
-            text-decoration: underline;
-        }
+.aboutme-container img {
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
-        .aboutme-container {
-            flex: 0 0 300px;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            height: fit-content;
-        }
+.aboutme-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
 
-        .aboutme-container img {
-            display: block;
-            margin: 0 auto 20px auto;
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
+.aboutme-container p {
+    text-align: justify;
+    color: #555;
+}
 
-        .aboutme-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #333;
-        }
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 24px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
 
-        .aboutme-container p {
-            text-align: justify;
-            color: #555;
-        }
+.back-to-top:hover {
+    background-color: #0056b3;
+}
 
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            border-radius: 50%;
-            text-decoration: none;
-            font-size: 24px;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s;
-        }
+/* Media Queries pour l'adaptation mobile */
+@media (max-width: 768px) {
+    .header-left, .header-right {
+        flex-direction: column;
+        align-items: center;
+    }
 
-        .back-to-top:hover {
-            background-color: #0056b3;
-        }
+    .header-left .logo {
+        max-height: 40px;
+        margin-right: 0;
+    }
 
-        /* Media Queries pour l'adaptation mobile */
-        @media (max-width: 768px) {
-            .header-right {
-                display: none;
-            }
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+    }
 
-            .hamburger {
-                display: flex;
-            }
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
 
-            .main-nav {
-                display: none;
-            }
+    .articles-container, .aboutme-container {
+        flex: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
 
-            .main-nav.active {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 50px;
-                left: 0;
-                width: 100%;
-                background-color: #444;
-            }
-
-            .main-nav a {
-                margin: 10px 0;
-                padding: 10px 0;
-                text-align: center;
-            }
-
-            .main-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .articles-container,
-            .aboutme-container {
-                flex: 100%;
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-        }
+    .header-right img {
+        width: 20px;
+        height: 20px;
+    }
+}
     </style>
-    <script>
-        function toggleMenu() {
-            var nav = document.querySelector('.main-nav');
-            nav.classList.toggle('active');
-        }
-    </script>
 </head>
 
 <body>
@@ -256,11 +227,6 @@
         <div class="header-left">
             <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/AZ900.png" alt="Logo" class="logo">
             <h1>Official Website Leonard SOTA</h1>
-        </div>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
         </div>
         <div class="header-right">
             <a href="https://www.instagram.com/leonardsota/" target="_blank">
@@ -288,7 +254,7 @@
             <button type="submit" style="padding: 8px 12px; background-color: #007bff; color: white; border: none; cursor: pointer; display: flex; align-items: center;">
                 <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search" style="width: 16px; height: 16px;">
             </button>
-        </form>
+        </form>        
     </nav>
 
     <div class="main-container">
@@ -300,7 +266,44 @@
                 <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
                 <a href="article1.html">Read more</a>
             </div>
-            <!-- Ajoutez d'autres articles ici -->
+            <div class="article">
+                <img src="article-image2.jpg" alt="Article Image">
+                <h2>Article Title 2</h2>
+                <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
+                <a href="article2.html">Read more</a>
+            </div>
+            <div class="article">
+                <img src="article-image3.jpg" alt="Article Image">
+                <h2>Article Title 3</h2>
+                <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
+                <a href="article3.html">Read more</a>
+            </div>
+            <div class="article">
+                <img src="article-image4.jpg" alt="Article Image">
+                <h2>Article Title 4</h2>
+                <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
+                <a href="article4.html">Read more</a>
+            </div>
+            <div class="article">
+                <img src="article-image5.jpg" alt="Article Image">
+                <h2>Article Title 5</h2>
+                <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
+                <a href="article5.html">Read more</a>
+            </div>
+            <div class="article">
+                <img src="article-image6.jpg" alt="Article Image">
+                <h2>Article Title 6</h2>
+                <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
+                <a href="article6.html">Read more</a>
+            </div>
+            <!-- Vous pouvez ajouter plus d'articles ici -->
+
+            <div class="article">
+                <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/bit.png" alt="Article Image">
+                <h2>Vue d'ensemble BitLocker</h2>
+                <p>BitLocker est une fonctionnalité de sécurité Windows qui protège vos données en chiffrant vos lecteurs.</p>
+                <a href="https://lsota.github.io/mon-site/Article/Vue-ensemble.html">Read more</a>
+            </div>
         </div>
 
         <!-- About Me Section -->
@@ -314,7 +317,7 @@
 
         <a href="#top" class="back-to-top">
             &#8679;
-        </a>
+        </a>        
     </div>
 
 </body>
