@@ -7,218 +7,262 @@
     <title>Official Website Leonard SOTA</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-}
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
 
-.main-header {
-    background-color: #222;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    z-index: 1000;
-}
+        .main-header {
+            background-color: #222;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            z-index: 1000;
+        }
 
-.header-left {
-    display: flex;
-    align-items: center;
-}
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
 
-.header-left .logo {
-    max-height: 50px;
-    margin-right: 20px;
-}
+        .header-left .logo {
+            max-height: 50px;
+            margin-right: 20px;
+        }
 
-.header-center h1 {
-    font-size: 24px;
-    margin: 0;
-    text-align: center;
-}
+        .header-center h1 {
+            font-size: 24px;
+            margin: 0;
+            text-align: center;
+        }
 
-.header-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
 
-.header-right a {
-    margin-left: 10px;
-}
+        .header-right a {
+            margin-left: 10px;
+            margin-right: 0px;
+        }
 
-.header-right img {
-    width: 24px;
-    height: 24px;
-}
+        .header-right img {
+            width: 24px;
+            height: 24px;
+        }
 
-.main-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #444;
-    padding: 5px 0;
-}
+        /* Menu Hamburger pour mobile */
+        .main-nav {
+            display: none;
+        }
 
-.main-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
-}
+        .hamburger {
+            display: block;
+            cursor: pointer;
+        }
 
-.main-nav a:hover {
-    text-decoration: underline;
-}
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+        }
 
-.main-container {
-    max-width: 1300px;
-    margin: 20px auto;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
+        /* Menu déroulant */
+        .main-nav-mobile {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: #444;
+            z-index: 999;
+        }
 
-.articles-container {
-    flex: 1;
-    background-color: white;
-    padding: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    margin-right: 20px;
-}
+        .main-nav-mobile a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
 
-.article {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 15px;
-}
+        .main-nav-mobile a:hover {
+            background-color: #555;
+        }
 
-.article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
+        /* CSS pour le container principal */
+        .main-container {
+            max-width: 1300px;
+            margin: 20px auto 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
 
-.article img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
+        .articles-container {
+            flex: 1;
+            background-color: white;
+            padding: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin-right: 20px;
+        }
 
-.article h2 {
-    color: #333;
-    margin-top: 10px;
-}
+        .article {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
+        }
 
-.article p {
-    color: #666;
-}
+        .article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
 
-.article a {
-    color: #3498db;
-    text-decoration: none;
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
-}
+        .article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
 
-.article a:hover {
-    text-decoration: underline;
-}
+        .article h2 {
+            color: #333;
+            margin-top: 10px;
+        }
 
-.aboutme-container {
-    flex: 0 0 300px;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    height: fit-content;
-}
+        .article p {
+            color: #666;
+        }
 
-.aboutme-container img {
-    display: block;
-    margin: 0 auto 20px auto;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+        .article a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
 
-.aboutme-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
+        .article a:hover {
+            text-decoration: underline;
+        }
 
-.aboutme-container p {
-    text-align: justify;
-    color: #555;
-}
+        .aboutme-container {
+            flex: 0 0 300px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            height: fit-content;
+        }
 
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 24px;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s;
-}
+        .aboutme-container img {
+            display: block;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
 
-.back-to-top:hover {
-    background-color: #0056b3;
-}
+        .aboutme-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
 
-/* Media Queries pour l'adaptation mobile */
-@media (max-width: 768px) {
-    .header-left, .header-right {
-        flex-direction: column;
-        align-items: center;
-    }
+        .aboutme-container p {
+            text-align: justify;
+            color: #555;
+        }
 
-    .header-left .logo {
-        max-height: 40px;
-        margin-right: 0;
-    }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 24px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
 
-    .main-nav {
-        flex-direction: column;
-        align-items: center;
-    }
+        .back-to-top:hover {
+            background-color: #0056b3;
+        }
 
-    .main-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
+        /* Media Queries pour l'adaptation mobile */
+        @media (max-width: 768px) {
+            .header-right {
+                position: static;
+                transform: none;
+            }
 
-    .articles-container, .aboutme-container {
-        flex: 100%;
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
+            .header-left {
+                flex: 1;
+                justify-content: center;
+            }
 
-    .header-right img {
-        width: 20px;
-        height: 20px;
-    }
-}
+            .header-center h1 {
+                text-align: center;
+                font-size: 20px;
+            }
+
+            .main-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .articles-container, .aboutme-container {
+                flex: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .main-nav {
+                display: none;
+            }
+
+            .main-nav-mobile {
+                display: flex;
+            }
+
+            .header-right {
+                display: none;
+            }
+        }
     </style>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("main-nav-mobile");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -227,6 +271,11 @@
         <div class="header-left">
             <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/AZ900.png" alt="Logo" class="logo">
             <h1>Official Website Leonard SOTA</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
         <div class="header-right">
             <a href="https://www.instagram.com/leonardsota/" target="_blank">
@@ -244,7 +293,7 @@
         </div>
     </header>
 
-    <nav class="main-nav">
+    <nav id="main-nav-mobile" class="main-nav-mobile">
         <a href="index.html">Home</a>
         <a href="https://lsota.github.io/mon-site/quijesuis.html">Parcours professionel</a>
         <a href="https://lsota.github.io/mon-site/certification.html">Certifications</a>
@@ -254,7 +303,7 @@
             <button type="submit" style="padding: 8px 12px; background-color: #007bff; color: white; border: none; cursor: pointer; display: flex; align-items: center;">
                 <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search" style="width: 16px; height: 16px;">
             </button>
-        </form>        
+        </form>
     </nav>
 
     <div class="main-container">
@@ -266,44 +315,7 @@
                 <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
                 <a href="article1.html">Read more</a>
             </div>
-            <div class="article">
-                <img src="article-image2.jpg" alt="Article Image">
-                <h2>Article Title 2</h2>
-                <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
-                <a href="article2.html">Read more</a>
-            </div>
-            <div class="article">
-                <img src="article-image3.jpg" alt="Article Image">
-                <h2>Article Title 3</h2>
-                <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
-                <a href="article3.html">Read more</a>
-            </div>
-            <div class="article">
-                <img src="article-image4.jpg" alt="Article Image">
-                <h2>Article Title 4</h2>
-                <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
-                <a href="article4.html">Read more</a>
-            </div>
-            <div class="article">
-                <img src="article-image5.jpg" alt="Article Image">
-                <h2>Article Title 5</h2>
-                <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
-                <a href="article5.html">Read more</a>
-            </div>
-            <div class="article">
-                <img src="article-image6.jpg" alt="Article Image">
-                <h2>Article Title 6</h2>
-                <p>Brief description of the article goes here. This is an introduction to what the article is about.</p>
-                <a href="article6.html">Read more</a>
-            </div>
-            <!-- Vous pouvez ajouter plus d'articles ici -->
-
-            <div class="article">
-                <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/bit.png" alt="Article Image">
-                <h2>Vue d'ensemble BitLocker</h2>
-                <p>BitLocker est une fonctionnalité de sécurité Windows qui protège vos données en chiffrant vos lecteurs.</p>
-                <a href="https://lsota.github.io/mon-site/Article/Vue-ensemble.html">Read more</a>
-            </div>
+            <!-- Ajoutez d'autres articles ici -->
         </div>
 
         <!-- About Me Section -->
@@ -314,10 +326,9 @@
                 Support de Production au sein du Groupe Rainbow Partners. Mon rôle principal consiste à superviser et à
                 optimiser les infrastructures, les applications, ainsi que les politiques de sécurité du groupe.</p>
         </div>
-
         <a href="#top" class="back-to-top">
             &#8679;
-        </a>        
+        </a>
     </div>
 
 </body>
