@@ -20,10 +20,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: fixed; /* Garde le header fixe en haut */
-            top: 0;
+            position: relative; /* Garde le header fixe en haut */
             width: 100%;
             z-index: 1000;
+            margin-bottom: 20; /* Ajoutez cette ligne si besoin */
         }
 
         .header-left {
@@ -65,10 +65,9 @@
             display: flex;
             justify-content: center;
             background-color: #444;
-            padding: 10px 0;
-            margin-top: 60px;
-            position: fixed; /* Garde la navigation fixe en dessous du header */
-            top: 60px;
+            padding: 5px 0;
+            margin-top: 20px;
+            position: relative; /* Garde la navigation fixe en dessous du header */
             width: 100%;
             z-index: 999;
         }
