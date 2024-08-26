@@ -57,12 +57,9 @@
         }
 
         /* Menu Hamburger pour mobile */
-        .main-nav {
-            display: none;
-        }
-
         .hamburger {
-            display: block;
+            display: none;
+            flex-direction: column;
             cursor: pointer;
         }
 
@@ -70,37 +67,31 @@
             width: 25px;
             height: 3px;
             background-color: white;
-            margin: 5px;
+            margin: 4px 0;
         }
 
-        /* Menu déroulant */
-        .main-nav-mobile {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            width: 100%;
+        .main-nav {
+            display: flex;
+            justify-content: center;
             background-color: #444;
-            z-index: 999;
+            padding: 5px 0;
+            margin-top: 20px;
         }
 
-        .main-nav-mobile a {
+        .main-nav a {
             color: white;
             text-decoration: none;
-            padding: 10px;
-            text-align: center;
-            border-bottom: 1px solid #333;
+            margin: 0 15px;
+            font-size: 18px;
         }
 
-        .main-nav-mobile a:hover {
-            background-color: #555;
+        .main-nav a:hover {
+            text-decoration: underline;
         }
 
-        /* CSS pour le container principal */
         .main-container {
             max-width: 1300px;
-            margin: 20px auto 0 auto;
+            margin: 20px auto;
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -211,18 +202,31 @@
         /* Media Queries pour l'adaptation mobile */
         @media (max-width: 768px) {
             .header-right {
-                position: static;
-                transform: none;
+                display: none;
             }
 
-            .header-left {
-                flex: 1;
-                justify-content: center;
+            .hamburger {
+                display: flex;
             }
 
-            .header-center h1 {
+            .main-nav {
+                display: none;
+            }
+
+            .main-nav.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                background-color: #444;
+            }
+
+            .main-nav a {
+                margin: 10px 0;
+                padding: 10px 0;
                 text-align: center;
-                font-size: 20px;
             }
 
             .main-container {
@@ -230,37 +234,18 @@
                 align-items: center;
             }
 
-            .articles-container, .aboutme-container {
+            .articles-container,
+            .aboutme-container {
                 flex: 100%;
                 margin-right: 0;
                 margin-bottom: 20px;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            .main-nav {
-                display: none;
-            }
-
-            .main-nav-mobile {
-                display: flex;
-            }
-
-            .header-right {
-                display: none;
             }
         }
     </style>
     <script>
         function toggleMenu() {
-            var menu = document.getElementById("main-nav-mobile");
-            if (menu.style.display === "flex") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "flex";
-            }
+            var nav = document.querySelector('.main-nav');
+            nav.classList.toggle('active');
         }
     </script>
 </head>
@@ -293,7 +278,7 @@
         </div>
     </header>
 
-    <nav id="main-nav-mobile" class="main-nav-mobile">
+    <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="https://lsota.github.io/mon-site/quijesuis.html">Parcours professionel</a>
         <a href="https://lsota.github.io/mon-site/certification.html">Certifications</a>
@@ -326,6 +311,7 @@
                 Support de Production au sein du Groupe Rainbow Partners. Mon rôle principal consiste à superviser et à
                 optimiser les infrastructures, les applications, ainsi que les politiques de sécurité du groupe.</p>
         </div>
+
         <a href="#top" class="back-to-top">
             &#8679;
         </a>
