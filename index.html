@@ -431,9 +431,10 @@
         margin-top: 10px; /* Réduire l'espace entre le menu et les articles */
     }
   @media (max-width: 768px) {
-    /* Masquer le formulaire de recherche dans la navigation sur les écrans mobiles */
-    form[action="/search"] {
-        display: none;
+    /* Cacher le formulaire de recherche sur les écrans mobiles */
+    .main-nav form,
+    .main-nav form[action="/search"] {
+        display: none !important;
     }
 }
     </style>
