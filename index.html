@@ -397,6 +397,39 @@
     .header-right {
         margin-top: 0;
     }
+    
+    @media (max-width: 768px) {
+    .main-nav {
+        display: flex;
+        flex-direction: column; /* Disposer les liens en colonne */
+        align-items: stretch; /* Étendre les liens sur toute la largeur */
+        padding: 0;
+        background-color: #333; /* Conserver une couleur de fond sombre */
+        margin-top: 20px; /* Ajuster l'espacement avec le contenu en dessous */
+        border-radius: 0; /* Garder les coins carrés */
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 15px 20px; /* Augmenter le padding pour rendre les liens plus accessibles */
+        color: white;
+        text-align: left; /* Aligner le texte à gauche */
+        font-size: 18px; /* Taille de police pour les liens */
+        text-decoration: none; /* Enlever la décoration du texte */
+        border-bottom: 1px solid #444; /* Ajouter une bordure pour séparer les liens */
+    }
+
+    .main-nav a:hover {
+        background-color: #555; /* Changer la couleur de fond au survol */
+    }
+
+    .main-nav a:last-child {
+        border-bottom: none; /* Supprimer la bordure sous le dernier lien */
+    }
+
+    .main-container {
+        margin-top: 10px; /* Réduire l'espace entre le menu et les articles */
+    }
 }
     </style>
 </head>
