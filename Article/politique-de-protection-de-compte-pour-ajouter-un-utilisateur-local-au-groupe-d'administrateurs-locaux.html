@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Protection de Compte pour Ajouter un Utilisateur Local</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        section {
+            padding: 20px;
+            background: #ffffff;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #35424a;
+            margin-bottom: 20px;
+        }
+        section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        section ul li {
+            margin-bottom: 10px;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Politique de Protection de Compte pour Ajouter un Utilisateur Local</h1>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2>Introduction</h2>
+        <p>Dans cet article, je vais vous montrer comment ajouter un utilisateur local au groupe des administrateurs locaux en utilisant la stratégie d'appartenance des utilisateurs locaux d'Intune. Cette méthode, qui s'appuie sur le profil de protection de compte d'Intune, offre une manière simplifiée et sécurisée de gérer les privilèges des utilisateurs sur les appareils Windows.</p>
+
+        <p>Leonard SOTA 27 août 2024 </p>
+        <p> Dans cet article, je vais vous montrer comment ajouter un utilisateur local au groupe des administrateurs locaux en utilisant la stratégie d'appartenance des utilisateurs locaux d'Intune. Cette méthode, qui s'appuie sur le profil de protection de compte d'Intune, offre une manière simplifiée et sécurisée de gérer les privilèges des utilisateurs sur les appareils Windows. Microsoft recommande d'utiliser la solution LAPS pour gérer automatiquement les comptes d'administrateurs locaux, les groupes et les mots de passe sur les appareils Windows.
+            
+            La protection des comptes, intégrée à la suite Endpoint Security d’Intune, permet aux administrateurs informatiques de déployer des politiques de sécurité, y compris la gestion des appartenances aux groupes locaux. Grâce à cette fonctionnalité, les administrateurs peuvent s'assurer que des utilisateurs ou des groupes spécifiques sont ajoutés au groupe Administrateurs locaux sur les appareils gérés, garantissant ainsi un équilibre entre la sécurité et l'accès administratif nécessaire.
+            
+            Pour créer un utilisateur local, suivez le guide optimal qui propose un script de correction via Intune. Un administrateur peut créer un nouveau profil "Protection du compte" dans Intune pour mettre en œuvre cette approche. Ce profil, configuré sous "Sécurité des points de terminaison", contient des paramètres permettant d'ajouter ou de supprimer des utilisateurs de groupes locaux. En spécifiant le groupe des administrateurs locaux et en désignant les utilisateurs ou groupes à ajouter, Intune applique automatiquement cette configuration aux appareils ciblés. Cette méthode réduit la nécessité d'intervention manuelle ou de scripts personnalisés, facilitant ainsi la gestion dans des environnements de grande envergure.
+            
+            L'utilisation de la protection de compte pour gérer les droits d'administrateur local est particulièrement avantageuse dans les environnements exigeant un haut niveau de sécurité. Elle garantit que seuls les utilisateurs autorisés bénéficient de privilèges élevés, tout en diminuant le risque d'accès non autorisé ou de modifications indésirables.
+            </p>
+
+        <h2>Principales raisons d'ajouter un utilisateur local au groupe des administrateurs locaux</h2>
+        <p>L'ajout d'un utilisateur local au groupe des administrateurs locaux se fait pour diverses raisons cruciales, chacune offrant à l'utilisateur des privilèges et des responsabilités spécifiques au sein du système.</p>
+
+        <p><strong>Voici les principales motivations :</strong></p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Raisons principales</th>
+                    <th>Détails</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Privilèges administratifs</td>
+                    <td>
+                        <strong>Configuration du système :</strong> L'utilisateur peut modifier les paramètres du système, installer des logiciels et gérer les ressources du système.
+                        <br><strong>Gestion des utilisateurs :</strong> L'utilisateur peut créer, modifier et supprimer d'autres comptes d'utilisateur, ainsi que gérer les autorisations et les appartenances aux groupes.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gestion de la sécurité</td>
+                    <td>
+                        <strong>Dépannage du système :</strong> L'utilisateur a le pouvoir de dépanner et de résoudre divers problèmes.
+                        <br><strong>Mises à jour et correctifs :</strong> L'utilisateur peut appliquer des mises à jour et des correctifs du système d'exploitation.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dépannage et maintenance</td>
+                    <td>
+                        <strong>Contrôle du système de fichiers :</strong> L'utilisateur peut accéder, modifier et supprimer tous les fichiers ou dossiers du système.
+                        <br><strong>Gestion des ressources :</strong> L'utilisateur peut gérer et allouer des ressources système.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Accès complet aux fichiers et aux ressources</td>
+                    <td>L'utilisateur peut effectuer certaines tâches d'administration à distance et installer des logiciels nécessitant des privilèges d'administrateur.</td>
+                </tr>
+
+                <tr>
+                    <td>Requis pour certaines installations de logiciels</td>
+                    <td>Certaines applications et mises à jour système nécessitent des privilèges d'administrateur pour être installées ou configurées correctement. L'ajout d'un utilisateur au groupe d'administrateurs locaux lui permet d'effectuer ces tâches sans avoir à se connecter sous un autre nom d'utilisateur ou à utiliser temporairement des autorisations élevées.</td>
+                </tr>
+                <tr>
+                    <td>Gestion à distance</td>
+                    <td>Si le système doit être géré à distance, le fait d’être membre du groupe d’administrateurs locaux permet souvent des connexions au bureau à distance, des outils de gestion à distance et d’autres tâches d’administration à distance.</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <h2>Étapes pour créer une stratégie de protection de compte</h2>
+        <p>Suivez les étapes ci-dessous pour créer une stratégie de protection de compte afin d'ajouter un utilisateur local au groupe des administrateurs locaux via Intune :</p>
+        <ul>
+            <li>Connectez-vous au centre d'administration Microsoft Intune avec vos identifiants d'administrateur.</li>
+            <li>Naviguez vers <strong>Sécurité des points de terminaison</strong> > <strong>Protection du compte</strong>.</li>
+            <li>Cliquez sur <strong>+ Créer une politique</strong>.</li>
+
+            <div class="image-container">
+                <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/az1.png" alt="Étape 2 - Configuration des paramètres">
+            </div>
+
+            <li>Dans l'étape suivante, nous pouvons créer une nouvelle  politique de protection de compte  à partir de zéro. 
+                <p> Pour cela, donnez les options mentionnées ci-dessous. <strong>Plateforme :  Windows 10 et versions ultérieures</strong>, <strong>Profil :  Appartenance à un groupe d'utilisateurs local</strong></p></li>
+
+        <div class="image-container">
+            <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/az2.png" alt="Étape 1 - Intune Protection">
+        </div>
+
+        <li>Sur la page Détails de base, vous pouvez nommer la stratégie de protection de compte pour l'appartenance au groupe d'utilisateurs local, par exemple, par exemple : <strong>« Ajouter Adm1 au groupe d'administrateurs locaux ».</strong> Si nécessaire, ajoutez une brève description de la stratégie, puis cliquez sur <strong>**Suivant**.</strong></li>
+            <div class="image-container">
+                <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/az3.png" alt="Étape 2 - Configuration des paramètres">
+            </div>
+
+        <p>Sur la page <strong>Paramètres de configuration</strong>, sous l'option <strong>Utilisateurs et groupes locaux</strong>, sélectionnez les options suivantes :</p>
+        <ul>
+            <li>Groupe local: <strong>Administrateur</strong></li>
+            <li>Action du groupe et de l'utilisateur: <strong>Manuel</strong></li>
+        </ul>
+
+        <div class="image-container">
+            <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/az9.png" alt="Étape 2 - Configuration des paramètres">
+        </div>
+        <p>Cliquez sur  <strong>**Ajouter un (des) utilisateur(s)**</strong>.</p>
+        
+        <div class="image-container">
+            <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/az4.png" alt="Étape 3 - Balises de portée">
+        </div>
+
+        <p>Dans l'onglet suivant, laissez-les <strong>**balises de portée**</strong> par défaut. Si vous avez une balise de portée personnalisée, vous pouvez également la sélectionner pour ce déploiement.</p>
+        
+        <div class="image-container">
+            <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/az5.png" alt="Étape 3 - Balises de portée">
+        </div>
+
+        <p>Sous l'onglet <strong>**Ajouter des groupes**</strong> cliquez sur **Inclure les groupes** et sélectionnez ** Endpoint Test **. Les options **Filtre** et **Mode de filtre** doivent être laissées telles quelles. Il n'est pas nécessaire de sélectionner des groupes à exclure pour cette affectation.</p>
+        
+        <div class="image-container">
+            <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/az6.png" alt="Étape 3 - Balises de portée">
+        </div>
+
+        <p>Dans l'onglet <strong>**Révision + Ajout**,</strong> examinez attentivement tous les paramètres de la stratégie « Ajouter un utilisateur local au groupe d'administrateurs locaux ». Une fois que vous avez vérifié que tout est correct, cliquez sur <strong>**Créer**</strong> pour appliquer les modifications.</p>
+        
+        <div class="image-container">
+            <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/az7.png" alt="Étape 3 - Balises de portée">
+        </div>
+
+        <h2>Expérience de l'utilisateur final</h2>
+        <p>Pour vérifier si la stratégie d'appartenance au groupe d'utilisateurs locaux de protection des comptes a bien été appliquée, suivez ces étapes sur l'un des appareils ciblés par la politique :</p>
+        <ul>
+            <li>Connectez-vous à l'appareil concerné.</li>
+            <li>Ouvrez la boîte de dialogue <strong>Exécuter</strong> en appuyant sur `Win + R`, puis tapez `lusrmgr.msc`.</li>
+            <li>Dans la section <strong>Utilisateurs</strong>, sélectionnez <strong>Adm1n</strong>.</li>
+        </ul>
+
+        <div class="image-container">
+            <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/az8.png" alt="Vérification de l'application de la stratégie">
+        </div>
+
+        <p>Vérifiez que le groupe <strong>Administrateurs</strong> a été ajouté avec succès.</p>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Votre Organisation. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
