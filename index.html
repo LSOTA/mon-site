@@ -174,24 +174,31 @@
         }
 
         .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            border-radius: 50%;
-            text-decoration: none;
-            font-size: 24px;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s;
-        }
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent; /* Transparent background */
+    color: red; /* Red color for the arrow */
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    font-size: 24px; /* Small size for a thin arrow */
+    line-height: 40px; /* Center the arrow vertically */
+    border-radius: 50%; /* Rounded shape */
+    display: none; /* Hidden by default */
+    z-index: 1000;
+    transition: opacity 0.3s; /* Smooth transition for appearing/disappearing */
+}
 
-        .back-to-top:hover {
-            background-color: #0056b3;
-        }
+.back-to-top:hover {
+    color: darkred; /* Slightly darker arrow on hover */
+}
+
+.show {
+    display: block; /* Show the arrow */
+    opacity: 0.8; /* Slightly transparent when visible */
+}
 
          /* CSS global pour toutes les images dans les articles */
          .article-content img {
@@ -534,9 +541,20 @@
                 optimiser les infrastructures, les applications, ainsi que les politiques de sécurité du groupe.</p>
         </div>
 
-        <a href="#top" class="back-to-top">
-            &#8679;
-        </a>        
+        <a href="#top" class="back-to-top" id="backToTop">&#9650;</a> <!-- Small thin arrow -->
+        <!-- JavaScript just before the closing body tag -->
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            var backToTop = document.getElementById("backToTop");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTop.classList.add("show");
+            } else {
+                backToTop.classList.remove("show");
+            }
+        }
+    </script>   
     </div>
 
 </body>
