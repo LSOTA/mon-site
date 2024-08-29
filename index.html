@@ -443,6 +443,19 @@
     .main-nav form[action="/search"] {
         display: none !important;
     }
+
+    .new-articles-container {
+    margin-top: 20px; /* Adds space between the "Qui je suis" content and the new articles */
+}
+
+.new-articles-container .article {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
 }
     </style>
 </head>
@@ -492,6 +505,13 @@
                 <p>Les raisons pour adopter Azure Landing Zones pour votre migration vers le cloud</p>
                 <a href="https://lsota.github.io/mon-site/Article/azure-landing-zones.html">READ MORE</a>
             </div>
+
+            <div class="article">
+                <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/enrolement.png" alt="Article Image">
+                <h2>Effectuer un Enrôlement d'un PC dans le domaine Azure</h2>
+                <p>Pour effectuer un enrôlement correct d'un PC dans un domaine Azure, il est nécessaire de suivre plusieurs étapes critiques, notamment la création d'un compte local avec des droits administratifs, la déconnexion du compte, la suppression de certaines clés de registre, et la réinscription de l'appareil dans Intune.</p>
+                <a href="https://lsota.github.io/mon-site/Article/Effectuer-un-Enrolement-d'un-PC-dans-le-domaine-Azure.html">READ MORE</a>
+            </div>
             
             <div class="article">
                 <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/image-outlook1.png" alt="Article Image">
@@ -515,30 +535,30 @@
             </div>
         </div>
 
-        <!-- About Me Section -->
-        <div class="aboutme-container">
-            <h2>Qui je suis</h2>
-            <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/quijesuis.JPG" alt="Your Photo">
-            <p>Je m'appelle Leonard SOTA. Je suis administrateur Cloud et actuellement Responsable des Applications et du
-                Support de Production au sein du Groupe Rainbow Partners. Mon rôle principal consiste à superviser et à
-                optimiser les infrastructures, les applications, ainsi que les politiques de sécurité du groupe.</p>
+<!-- About Me Section -->
+<div class="aboutme-container">
+    <h2>Qui je suis</h2>
+    <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/quijesuis.JPG" alt="Your Photo">
+    <p>Je m'appelle Leonard SOTA. Je suis administrateur Cloud et actuellement Responsable des Applications et du
+        Support de Production au sein du Groupe Rainbow Partners. Mon rôle principal consiste à superviser et à
+        optimiser les infrastructures, les applications, ainsi que les politiques de sécurité du groupe.</p>
+
+    <!-- New Articles Section -->
+    <div class="new-articles-container">
+        <div class="article">
+                
+            
         </div>
 
-        <a href="#top" class="back-to-top" id="backToTop">&#9650;</a> <!-- Small thin arrow -->
-        <!-- JavaScript just before the closing body tag -->
-    <script>
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-            var backToTop = document.getElementById("backToTop");
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                backToTop.classList.add("show");
-            } else {
-                backToTop.classList.remove("show");
-            }
-        }
-    </script>   
+        <div class="article">
+            <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/new-article2.png" alt="New Article Image">
+            <h2>New Article 2</h2>
+            <p>Description for the new article 2.</p>
+            <a href="https://example.com/new-article-2">READ MORE</a>
+        </div>
     </div>
+</div>
+
 
 </body>
 
