@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effectuer un Enrôlement d'un PC dans le domaine Azure</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        section {
+            padding: 20px;
+            background: #ffffff;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #35424a;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        section ul li {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        section ul li a {
+            color: #35424a;
+            text-decoration: none;
+        }
+
+        section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        .script-block {
+            background-color: #f9f9f9;
+            border-left: 4px solid #35424a;
+            padding: 10px;
+            margin: 20px 0;
+        }
+
+        .script-block pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Effectuer un Enrôlement d'un PC dans le domaine Azure</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Introduction</h2>
+            <p>Pour effectuer un enrôlement correct d'un PC dans un domaine Azure, il est nécessaire de suivre plusieurs étapes critiques, notamment la création d'un compte local avec des droits administratifs, la déconnexion du compte, la suppression de certaines clés de registre, et la réinscription de l'appareil dans Intune.</p>
+
+            <h2>Étapes à suivre</h2>
+            <p>Voici les étapes détaillées pour effectuer cette opération :</p>
+            <ol>
+                <li>Créer un compte local avec les droits d'administrateur.</li>
+                <li>Aller dans <strong>Compte > Accès professionnel et scolaire</strong> et déconnecter le compte actuel.</li>
+                <li>Connectez-vous avec le compte administrateur créé et supprimez dans les clés de registre tous les dossiers contenant des chiffres et des lettres aléatoires :</li>
+            </ol>
+
+            <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/enrolement.png" alt="Accès professionnel et scolaire">
+
+            <p>Ensuite, accédez à la clé de registre suivante et supprimez tous les dossiers contenant des chiffres et des lettres aléatoires :</p>
+
+            <div class="script-block">
+                <pre>Ordinateur\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Enrollments</pre>
+            </div>
+
+            <img src="https://raw.githubusercontent.com/LSOTA/mon-site/main/Photo/cleregistre.png" alt="Clé de registre Enrollments">
+
+            <p>Il est essentiel de supprimer uniquement les dossiers avec des chiffres et des lettres aléatoires en majuscules. Ne supprimez pas les dossiers comme (Context, Ownership, Status, ValidNodePaths).</p>
+            
+            <p>Ensuite, il faut réinscrire l'appareil dans Intune pour terminer l'enrôlement.</p>
+        </section>
+
+        
