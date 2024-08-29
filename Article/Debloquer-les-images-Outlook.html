@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Débloquer les images dans un mail Outlook</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        section {
+            padding: 20px;
+            background: #ffffff;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #35424a;
+            margin-bottom: 20px;
+        }
+        section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        section ul li {
+            margin-bottom: 10px;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+        }
+        code {
+            font-family: monospace;
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Débloquer les images dans un mail Outlook</h1>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2>Introduction</h2>
+        <p>Dans Outlook, les images sont bloquées par défaut pour protéger votre vie privée et empêcher le téléchargement automatique de contenus externes. Cependant, il peut être nécessaire de débloquer les images dans certains emails pour visualiser l'intégralité de leur contenu.</p>
+
+        <h2>Étapes pour débloquer les images dans un email spécifique</h2>
+        <ul>
+            <li>Ouvrez l'email dans Outlook.</li>
+            <li>Un message d'avertissement devrait apparaître en haut de l'email indiquant que les images ont été bloquées.</li>
+            <li>Cliquez sur le bouton <strong>"Télécharger les images"</strong> pour afficher les images du message.</li>
+        </ul>
+
+        <h2>Débloquer les images pour tous les emails d'un expéditeur spécifique</h2>
+        <p>Si vous faites confiance à un expéditeur et souhaitez afficher les images par défaut pour ses emails, vous pouvez suivre ces étapes :</p>
+        <ul>
+            <li>Ouvrez un email de l'expéditeur.</li>
+            <li>Cliquez sur le message d'avertissement en haut de l'email.</li>
+            <li>Sélectionnez <strong>"Ajouter l'expéditeur à la liste des expéditeurs approuvés"</strong>.</li>
+        </ul>
+
+        <h2>Modifier les paramètres globaux de téléchargement des images</h2>
+        <p>Si vous préférez débloquer les images par défaut pour tous les emails, vous pouvez ajuster les paramètres globaux dans Outlook :</p>
+        <ul>
+            <li>Allez dans <strong>Fichier > Options</strong>.</li>
+            <li>Sélectionnez <strong>Centre de gestion de la confidentialité</strong> dans le menu de gauche.</li>
+            <li>Cliquez sur <strong>Paramètres du Centre de gestion de la confidentialité</strong>.</li>
+            <li>Sous l'option <strong>Téléchargement automatique</strong>, décochez la case <strong>"Ne pas télécharger automatiquement les images dans les messages électroniques HTML ou les éléments RSS"</strong>.</li>
+        </ul>
+
+
+        <h2>Utilisation d'un script PowerShell pour configurer le registre</h2>
+        <p>Dans certains cas, il peut être utile d'automatiser le processus de déblocage des images dans Outlook en utilisant un script PowerShell. Le script ci-dessous permet de créer une clé de registre spécifique et de définir des valeurs pour configurer Outlook :</p>
+
+        <pre><code># Spécifiez le chemin de la clé de registre
+$parentRegistryPath = "HKCU:\Software\Microsoft\Office\16.0\Outlook\Options"
+$childKeyName = "Mail"
+$registryPath = Join-Path -Path $parentRegistryPath -ChildPath $childKeyName
+
+# Vérifiez si la clé de registre existe
+if (-not (Test-Path -Path $registryPath)) {
+    Write-Host "La clé de registre n'existe pas. Création en cours..."
+    # Créez la clé de registre MAIL
+    New-Item -Path $parentRegistryPath -Name $childKeyName -Force
+    Write-Host "La clé de registre a été créée avec succès."
+} else {
+    Write-Host "La clé de registre existe déjà."
+}
+
+# Définir un tableau associatif de valeurs à créer
+$values = @{
+    "BlockExtContent" = 1
+    "JunkMailImportAppend" = 1
+    "JunkMailImportLists" = 1
+    "Internet" = 1
+}
+
+# Créer les valeurs dans la clé de registre
+foreach ($valueName in $values.Keys) {
+    $valueData = $values[$valueName]
+    New-ItemProperty -Path $registryPath -Name $valueName -Value $valueData -PropertyType DWORD -Force
+    Write-Host "La valeur DWORD '$valueName' avec la donnée '$valueData' a été créée avec succès dans la clé de registre MAIL."
+}
+        </code></pre>
+
+        <h2>Explication du script PowerShell</h2>
+        <p>Ce script PowerShell permet de configurer certains paramètres d'Outlook via le registre Windows. Voici un détail de chaque partie du script :</p>
+        
+        <ul>
+            <li><strong>Spécification du chemin de la clé de registre :</strong>
+                <br>
+                <code>$parentRegistryPath = "HKCU:\Software\Microsoft\Office\16.0\Outlook\Options"</code>
+                <br>
+                <code>$childKeyName = "Mail"</code>
+                <br>
+                <code>$registryPath = Join-Path -Path $parentRegistryPath -ChildPath $childKeyName</code>
+                <br>
+                <em>Cette section spécifie le chemin où la clé de registre doit être créée ou vérifiée. Le chemin complet est stocké dans la variable <code>$registryPath</code>.</em>
+            </li>
+            <li><strong>Vérification de l'existence de la clé de registre :</strong>
+                <br>
+                <code>if (-not (Test-Path -Path $registryPath)) { ... }</code>
+                <br>
+                <em>Ce bloc vérifie si la clé de registre existe déjà. Si elle n'existe pas, elle est créée. Sinon, un message indique qu'elle est déjà présente.</em>
+            </li>
+            <li><strong>Création des valeurs de registre :</strong>
+                <br>
+                <code>$values = @{ ... }</code>
+                <br>
+                <em>Cette section définit un tableau associatif où chaque clé correspond à un nom de valeur dans la clé de registre, et chaque valeur associée est une donnée à insérer.</em>
+            </li>
+            <li><strong>Application des valeurs :</strong>
+                <br>
+                <code>foreach ($valueName in $values.Keys) { ... }</code>
+                <br>
+                <em>Ce bloc boucle sur chaque paire nom-valeur dans le tableau associatif, créant ou mettant à jour chaque valeur dans la clé de registre spécifiée.</em>
+            </li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>En suivant ces étapes et en utilisant ce script, vous pouvez automatiser la configuration des paramètres d'Outlook pour débloquer les images dans vos emails et ajuster d'autres paramètres importants directement via le registre Windows.</p>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Votre Organisation. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
