@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Léonard SOTA - CV</title>
+    <title>Mes Certifications</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -20,146 +20,98 @@
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        header {
-            display: flex;
-            background-color: #0A4E9A;
-            color: white;
-            padding: 20px;
-            border-radius: 8px 8px 0 0;
-        }
-        .photo {
-            flex: 1;
-            max-width: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-        }
-        .photo img {
-            width: 100%;
-            border-radius: 50%;
-        }
-        .info {
-            flex: 3;
-            padding-left: 20px;
-        }
-        .info h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-        .info h2 {
-            font-size: 24px;
-            margin: 5px 0;
-        }
-        .info p {
-            font-size: 18px;
-            margin: 5px 0;
-        }
-        .section {
-            padding: 20px;
-        }
-        .section h3 {
-            font-size: 28px;
-            color: #0A4E9A;
-            border-bottom: 2px solid #0A4E9A;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .section p {
-            font-size: 16px;
-            line-height: 1.5;
-            margin: 10px 0;
-        }
-        .left-column {
-            width: 30%;
-            float: left;
-            padding-right: 20px;
-        }
-        .right-column {
-            width: 70%;
-            float: left;
-        }
-        .skill-box, .contact-box {
-            background-color: #f9f9f9;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .footer {
-            clear: both;
+        h1 {
             text-align: center;
+            color: #444;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .certification {
+            margin-bottom: 25px;
             padding: 20px;
-            background-color: #0A4E9A;
-            color: white;
+            border-left: 4px solid #007BFF;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .certification:hover {
+            background-color: #f1f1f1;
+        }
+        .certification h2 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            color: #007BFF;
+        }
+        .certification p {
+            margin: 5px 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .certification .details {
             font-size: 14px;
-            margin-top: 20px;
-            border-radius: 0 0 8px 8px;
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #007BFF;
+            color: #fff;
+            margin-top: 40px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="photo">
-                <img src="URL_TO_YOUR_PHOTO" alt="Léonard SOTA">
-            </div>
-            <div class="info">
-                <h1>Léonard SOTA</h1>
-                <h2>IT Administrator | Cloud Azure & Certified AZ-900</h2>
-                <p>léonardsota@gmail.com | +33 7 82 22 09 97 | 91160 Longjumeau</p>
-            </div>
-        </header>
+        <h1>Mes Certifications</h1>
 
-        <div class="left-column">
-            <div class="contact-box">
-                <h3>Langues</h3>
-                <p>Albanais - Langue Maternelle</p>
-                <p>Français - Niveau Avancé</p>
-                <p>Italien (bien)</p>
-            </div>
-            <div class="skill-box">
-                <h3>Compétences Techniques</h3>
-                <p>Outils Cloud : Azure Sentinel</p>
-                <p>DLP : Microsoft Purview</p>
-                <p>SOC : Microsoft Defender XDR</p>
-                <p>OS : Windows, Windows Server, Linux, Protocoles réseaux (TCP/IP, DHCP, DNS)</p>
-                <p>Langages de programmation : Python, PowerShell (Script de base)</p>
-                <p>Gestion DNS OVH</p>
-            </div>
-            <div class="skill-box">
-                <h3>Formation</h3>
-                <p>Technicien en Assistance Informatique (G2R, Paris XI) Juin 2021 à Déc. 2021</p>
-                <p>2 jours Formation U11 Module 9-10 ans (Juin 2015)</p>
-            </div>
-            <div class="skill-box">
-                <h3>Certificats</h3>
-                <p>Microsoft Certified: Azure Fundamentals AZ-900 (Mai 2024)</p>
-                <p>Technicien en Assistance Informatique (Janvier 2022)</p>
-                <p>Master I « Education physique » (Albanie) Master (Juin 2011)</p>
-                <p>Master II « Professionnel de sports » (Albanie) (Juil. 2013)</p>
-            </div>
+        <div class="certification">
+            <h2>Microsoft Certified Azure Fundamentals - AZ-900</h2>
+            <p class="details"><strong>Date d'obtention :</strong> 2023</p>
+            <p>Certification démontrant la maîtrise des concepts de base du cloud computing, des services Azure, ainsi que de la sécurité et de la confidentialité dans Azure.</p>
         </div>
 
-        <div class="right-column">
-            <div class="section">
-                <h3>Expérience</h3>
-                <p><strong>Cyber Security - ISO 27001</strong> | Sep. 2023 à présent</p>
-                <p>Contexte : Mise en place d'un SMSI dans le cadre de la préparation à un certificat ISO/IEC 27001.</p>
-                <p>Réalisations : Préparation des stratégies et politiques sous les différentes (PCA, DRP, DLP...), etc.</p>
-
-                <p><strong>Responsable Application & Production Support</strong> | QUANTEAM, Paris 8ème | Oct. 2022 à ce jour</p>
-                <p>Gestion Azure Active Directory, Microsoft Entra ID, analyse des utilisateurs à risque, etc.</p>
-
-                <p><strong>Technicien Support Proximité (Mission Groupe Hermès)</strong> | Consort NT, Paris | Juin 2022 à oct. 2022</p>
-                <p>Préparation/Masterisation des postes de travail, gestion logistique, etc.</p>
-
-                <p><strong>Technicien Support (Help Desk) Mission SFR</strong> | Consort NT, Paris | Mars 2022 à juin 2022</p>
-                <p>Répondre aux utilisateurs par téléphone, création de tickets, etc.</p>
-            </div>
+        <div class="certification">
+            <h2>Technicien d’Assistance en Informatique</h2>
+            <p class="details"><strong>Date d'obtention :</strong> 10/12/2021</p>
+            <p>Obtention du titre professionnel de Technicien d’Assistance en Informatique après une formation intensive couvrant les aspects techniques et pratiques du support informatique.</p>
         </div>
 
-        <footer class="footer">
-            &copy; 2024 Léonard SOTA - Tous droits réservés
-        </footer>
+        <div class="certification">
+            <h2>Certificat LinkedIn Learning - Exchange Online : Déploiement et administration</h2>
+            <p class="details"><strong>Date d'obtention :</strong> 23/04/2024</p>
+            <p class="details"><strong>ID du certificat :</strong> 408ebcdb8d0a3c75aa681a26e5058643012ad777fc1546fa8db84fda47850217</p>
+            <p>Formation spécialisée sur le déploiement et la gestion de Microsoft Exchange Online dans un environnement Microsoft 365/Office 365.</p>
+        </div>
+
+        <div class="certification">
+            <h2>Career Essentials Certificate by Microsoft and LinkedIn</h2>
+            <p class="details"><strong>Date d'obtention :</strong> 23/04/2024</p>
+            <p class="details"><strong>ID du certificat :</strong> 82e83d48770e20d82d85e621a92114efa202cda61b992691c11cec42c7e33f08</p>
+            <p>Programme intensif axé sur les compétences essentielles pour une carrière en administration système, couvrant la gestion des réseaux et la sécurité des systèmes.</p>
+        </div>
+
+        <div class="certification">
+            <h2>Attestation de Comparabilité - Diplôme Universitaire</h2>
+            <p class="details"><strong>Date d'obtention :</strong> 15/07/2011</p>
+            <p class="details"><strong>Établissement :</strong> Université des sports de Tirana</p>
+            <p>Diplôme reconnu par le système éducatif français au niveau II, correspondant à trois années d'études supérieures dans le domaine des sciences du mouvement.</p>
+        </div>
+
+        <div class="certification">
+            <h2>Attestation de Comparabilité - Diplôme Lycée</h2>
+            <p class="details"><strong>Date d'obtention :</strong> 10/08/2012</p>
+            <p class="details"><strong>Établissement :</strong> Lycée national des sports "Bernardina Qerraxhia" à Durrës</p>
+            <p>Diplôme reconnu par le système éducatif français au niveau IV, permettant l'accès à l'enseignement supérieur.</p>
+        </div>
     </div>
+
+    <footer>
+        &copy; 2024 Léonard SOTA - Tous droits réservés
+    </footer>
 </body>
 </html>
