@@ -13,19 +13,24 @@
             padding: 0;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 20px auto;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
         }
         header {
             background-color: #0A4E9A;
             color: white;
             padding: 20px;
             display: flex;
+            flex-direction: row;
             align-items: center;
+            width: 100%;
         }
         .profile-pic {
             flex: 0 0 150px;
@@ -42,65 +47,77 @@
             flex: 1;
         }
         .header-info h1 {
-            font-size: 36px;
+            font-size: 32px;
             margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         .header-info h2 {
-            font-size: 20px;
+            font-size: 18px;
             margin: 5px 0;
         }
         .header-info p {
             font-size: 16px;
             margin: 5px 0;
         }
-        .content {
-            display: flex;
-            padding: 20px;
-            flex-wrap: wrap;
-        }
         .left-column {
-            flex: 0 0 30%;
+            width: 30%;
             background-color: #1C1C1C;
             color: white;
             padding: 20px;
-            border-radius: 8px;
-            margin-right: 20px;
             box-sizing: border-box;
-        }
-        .right-column {
-            flex: 0 0 65%;
-            box-sizing: border-box;
-        }
-        .left-column h3, .right-column h3 {
-            color: #007BFF;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        .left-column p, .right-column p {
-            margin: 10px 0;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
         }
         .section {
             margin-bottom: 20px;
         }
-        .icon-list {
-            display: flex;
-            align-items: center;
+        .section h3 {
+            color: #007BFF;
             margin-bottom: 10px;
-        }
-        .icon-list img {
-            width: 20px;
-            margin-right: 10px;
-        }
-        .btn-experience {
-            display: inline-block;
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
             text-transform: uppercase;
-            font-weight: bold;
-            text-align: center;
-            margin: 20px 0;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+            font-size: 16px;
+        }
+        .section p {
+            margin: 10px 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .right-column {
+            width: 70%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .experience {
+            margin-bottom: 30px;
+        }
+        .experience h3 {
+            font-size: 18px;
+            color: #007BFF;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .experience h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .experience p {
+            font-size: 14px;
+            margin-bottom: 5px;
+            line-height: 1.6;
+        }
+        .experience ul {
+            margin: 10px 0;
+            padding-left: 20px;
+            list-style: disc;
+        }
+        .experience ul li {
+            font-size: 14px;
+            margin-bottom: 5px;
+            line-height: 1.6;
         }
         footer {
             background-color: #0A4E9A;
@@ -109,17 +126,17 @@
             padding: 10px;
             font-size: 14px;
             text-transform: uppercase;
+            width: 100%;
         }
         @media (max-width: 768px) {
-            .content {
+            .container {
                 flex-direction: column;
             }
             .left-column, .right-column {
-                flex: 100%;
-                margin-right: 0;
+                width: 100%;
             }
             .profile-pic {
-                margin: 0 auto 20px;
+                margin: 0 auto;
                 text-align: center;
             }
             .profile-pic img {
@@ -143,143 +160,134 @@
                 <p>léonardsota@gmail.com | +33 7 82 22 09 97 | 91160 Longjumeau</p>
             </div>
         </header>
-        <div class="content">
-            <div class="left-column">
-                <div class="section">
-                    <h3>About Me</h3>
-                    <div class="icon-list">
-                        <img src="phone_icon.png" alt="Phone Icon">
-                        <p>+33 7 82 22 09 97</p>
-                    </div>
-                    <div class="icon-list">
-                        <img src="email_icon.png" alt="Email Icon">
-                        <p>léonardsota@gmail.com</p>
-                    </div>
-                    <div class="icon-list">
-                        <img src="location_icon.png" alt="Location Icon">
-                        <p>91160 Longjumeau</p>
-                    </div>
-                </div>
-                <div class="section">
-                    <h3>Langues</h3>
-                    <p>Albanais - Langue Maternelle</p>
-                    <p>Français - Niveau Avancé</p>
-                    <p>Italien (bien)</p>
-                </div>
-                <div class="section">
-                    <h3>Compétences Techniques</h3>
-                    <p>Outils Cloud : Azure Sentinel</p>
-                    <p>DLP : Microsoft Purview</p>
-                    <p>SOC : Microsoft Defender XDR</p>
-                    <p>OS : Windows, Windows Server, Linux, Protocoles réseaux (TCP/IP, DHCP, DNS)</p>
-                    <p>Langages de programmation : Python, PowerShell (Script de base)</p>
-                    <p>Gestion DNS OVH</p>
-                </div>
-                <div class="section">
-                    <h3>Formation</h3>
-                    <p>Technicien en Assistance Informatique G2R, Paris XI Juin 2021 à Déc. 2021</p>
-                    <p>(2 jours) Formation U11 Module 9-10 ans (Juin 2015)</p>
-                </div>
-                <div class="section">
-                    <h3>Certificats</h3>
-                    <p>Microsoft Certified: Azure Fundamentals AZ-900 (Mai 2024)</p>
-                    <p>Technicien en Assistance Informatique (Janvier 2022)</p>
-                    <p>Master I « Education physique » (Albanie) Master (Juin 2011)</p>
-                    <p>Master II « Professionnel de sports » (Albanie) (Juil. 2013)</p>
-                </div>
-                <div class="section">
-                    <h3>Centres d'intérêt</h3>
-                    <p>Sport (Football, Basketball, Ping Pong)</p>
-                    <p>Muse, Cinéma, Voyage</p>
-                </div>
-                <div class="section">
-                    <h3>Qualités</h3>
-                    <p>Travail en équipe</p>
-                    <p>Relationnel</p>
-                    <p>Exigence</p>
-                    <p>Organisation</p>
-                </div>
+        <div class="left-column">
+            <div class="section">
+                <h3>About Me</h3>
+                <p>IT Administrator | Cloud Azure & Certified AZ-900</p>
             </div>
-            <div class="right-column">
-                <div class="section">
-                    <a class="btn-experience" href="#">Experience</a>
-                    <h3>Cyber Security - ISO 27001</h3>
-                    <p>Sep. 2023 à présent</p>
-                    <p>Contexte : Implémentation d’un Système de Management de la Sécurité de l’Information (SMSI) dans le cadre d’une préparation d’un certificat ISO/IEC 27001 avec l’équipe de cybersécurité.</p>
-                    <p>Réalisations :</p>
-                    <ul>
-                        <li>Préparation des stratégies et politiques sous les différentes (PCA, DRP, DLP...)</li>
-                        <li>Implémentation du système (SMSI)</li>
-                        <li>Détecter les opérations malveillantes (Malops) à l'aide de Microsoft Defender et Sentinel</li>
-                        <li>Documentation pour préparer un audit ISO/IEC 27001</li>
-                    </ul>
-                    <p>Environnement Technique : Azure Sentinel, Azure Entra ID, Microsoft Purview, Microsoft Defender XDR</p>
-                    <p>Environnement Fonctionnel : ISO/IEC 27001</p>
-                </div>
-                <div class="section">
-                    <h3>Responsable Application & Production Support</h3>
-                    <p>QUANTEAM, Paris 8ème Oct. 2022 à ce jour</p>
-                    <ul>
-                        <li>Gestion Azure Active directory, Microsoft Entra ID</li>
-                        <li>Analyser les utilisateurs à risque</li>
-                        <li>Gérer le groupe de ressources</li>
-                        <li>Gérer le contrôle d'accès basé sur les rôles</li>
-                        <li>Gestion applicative et support niveau 2 & 3</li>
-                        <li>Gérer la sauvegarde Vms</li>
-                        <li>Identifier les domaines nécessitant des améliorations et lancer des plans d’action immédiats</li>
-                        <li>Configurer et gérer des réseaux virtuels</li>
-                        <li>Déployer et gérer des machines virtuelles (Créer et configurer des machines virtuelles pour Windows et Linux)</li>
-                        <li>Gérer le contrôle d'accès basé sur les rôles</li>
-                        <li>Surveiller et dépanner</li>
-                        <li>Créer et configurer un Groupe de Sécurité Réseau</li>
-                        <li>Suivi ticketTing avec JIRA et ITSM</li>
-                        <li>Outil d’asset management : Insight</li>
-                        <li>Suivi des travaux d’améliorations, documentation et FAQ</li>
-                        <li>Evolution vers management d’équipe</li>
-                    </ul>
-                </div>
-                <div class="section">
-                    <h3>Technicien Support Proximité</h3>
-                    <p>Mission Groupe Hermès, Consort NT, Paris Juin 2022 à oct. 2022</p>
-                    <ul>
-                        <li>Préparation/Masterisation des postes de travail</li>
-                        <li>Gestion logistique : préparation des colis à expédier sur les sites et remise aux équipes chargées des expéditions</li>
-                        <li>Mise à jour quotidienne du reporting d’avancement pour sécuriser les déploiements</li>
-                        <li>Recette des installations effectuées & rédaction</li>
-                    </ul>
-                </div>
-                <div class="section">
-                    <h3>Technicien Support (Help Desk) Mission SFR</h3>
-                    <p>Consort NT, Paris Mars 2022 à juin 2022</p>
-                    <ul>
-                        <li>Répondre a Utilisateur par téléphone</li>
-                        <li>Création de ticket sur logiciel de ticketing</li>
-                        <li>Diagnostique et résoudre le problème</li>
-                        <li>Installation de matériel informatique</li>
-                        <li>Escalader le ticket au niveau supérieur</li>
-                    </ul>
-                </div>
-                <div class="section">
-                    <h3>G2R-Formation</h3>
-                    <p>Centre de Formation, Paris XI, Paris Juin 2021 à déc. 2021</p>
-                    <ul>
-                        <li>Assistance aux utilisateurs</li>
-                        <li>Installation et configuration de poste informatique</li>
-                        <li>Active Directory (Création d’utilisateur, attributions de droit et gestion de GPO)</li>
-                        <li>Déploiement de poste de travail</li>
-                        <li>Gestion d'imprimante</li>
-                    </ul>
-                </div>
-                <div class="section">
-                    <h3>Travailleur Solidaire</h3>
-                    <p>Emmaüs, Paris Févr. 2017 à juin 2021</p>
-                    <ul>
-                        <li>Gestion de la boutique informatique et réception des matériels informatiques</li>
-                        <li>Contrôle et réparation de l'équipement informatique</li>
-                        <li>Estimation et définition des prix de ventes</li>
-                        <li>Mise en rayon des objets informatiques</li>
-                    </ul>
-                </div>
+            <div class="section">
+                <h3>Langues</h3>
+                <p>Albanais - Langue Maternelle</p>
+                <p>Français - Niveau Avancé</p>
+                <p>Italien (bien)</p>
+            </div>
+            <div class="section">
+                <h3>Compétences Techniques</h3>
+                <p>Outils Cloud : Azure Sentinel</p>
+                <p>DLP : Microsoft Purview</p>
+                <p>SOC : Microsoft Defender XDR</p>
+                <p>OS : Windows, Windows Server, Linux, Protocoles réseaux (TCP/IP, DHCP, DNS)</p>
+                <p>Langages de programmation : Python, PowerShell (Script de base)</p>
+                <p>Gestion DNS OVH</p>
+            </div>
+            <div class="section">
+                <h3>Formation</h3>
+                <p>Technicien en Assistance Informatique (G2R, Paris XI) Juin 2021 à Déc. 2021</p>
+                <p>(2 jours) Formation U11 Module 9-10 ans (Juin 2015)</p>
+            </div>
+            <div class="section">
+                <h3>Certificats</h3>
+                <p>Microsoft Certified: Azure Fundamentals AZ-900 (Mai 2024)</p>
+                <p>Technicien en Assistance Informatique (Janvier 2022)</p>
+                <p>Master I « Education physique » (Albanie) Master (Juin 2011)</p>
+                <p>Master II « Professionnel de sports » (Albanie) (Juil. 2013)</p>
+            </div>
+            <div class="section">
+                <h3>Centres d'intérêt</h3>
+                <p>Sport (Football, Basketball, Ping Pong)</p>
+                <p>Muse, Cinéma, Voyage</p>
+            </div>
+            <div class="section">
+                <h3>Qualités</h3>
+                <p>Travail en équipe</p>
+                <p>Relationnel</p>
+                <p>Exigence</p>
+                <p>Organisation</p>
+            </div>
+            <div class="section">
+                <h3>Cours en Apprentissage</h3>
+                <p>Certification Microsoft Azure (Via Udemy)</p>
+                <p>AZ-104 : Certification Microsoft Azure Administrator</p>
+                <p>AZ-305 Conception de solutions d’architecture Microsoft Azure</p>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="experience">
+                <h3>Cyber Security - ISO 27001</h3>
+                <h4>Sep. 2023 à présent</h4>
+                <p><strong>Contexte :</strong> Implémentation d’un Système de Management de la Sécurité de l’Information (SMSI) dans le cadre d’une préparation d’un certificat ISO/IEC 27001 avec l’équipe de cybersécurité.</p>
+                <p><strong>Réalisations :</strong></p>
+                <ul>
+                    <li>Préparation des stratégies et politiques sous les différentes (PCA, DRP, DLP...)</li>
+                    <li>Implémentation du système (SMSI)</li>
+                    <li>Détecter les opérations malveillantes (Malops) à l'aide de Microsoft Defender et Sentinel</li>
+                    <li>Documentation pour préparer un audit ISO/IEC 27001</li>
+                </ul>
+                <p><strong>Environnement Technique :</strong> Azure Sentinel, Azure Entra ID, Microsoft Purview, Microsoft Defender XDR</p>
+                <p><strong>Environnement Fonctionnel :</strong> ISO/IEC 27001</p>
+            </div>
+            <div class="experience">
+                <h3>Responsable Application & Production Support</h3>
+                <h4>QUANTEAM, Paris 8ème | Oct. 2022 à ce jour</h4>
+                <ul>
+                    <li>Gestion Azure Active directory, Microsoft Entra ID</li>
+                    <li>Analyser les utilisateurs à risque</li>
+                    <li>Gérer le groupe de ressources</li>
+                    <li>Gérer le contrôle d'accès basé sur les rôles</li>
+                    <li>Gestion applicative et support niveau 2 & 3</li>
+                    <li>Gérer la sauvegarde Vms</li>
+                    <li>Identifier les domaines nécessitant des améliorations et lancer des plans d’action immédiats</li>
+                    <li>Configurer et gérer des réseaux virtuels</li>
+                    <li>Déployer et gérer des machines virtuelles (Créer et configurer des machines virtuelles pour Windows et Linux)</li>
+                    <li>Surveiller et dépanner</li>
+                    <li>Créer et configurer un Groupe de Sécurité Réseau</li>
+                    <li>Suivi ticketing avec JIRA et ITSM</li>
+                    <li>Outil d’asset management : Insight</li>
+                    <li>Suivi des travaux d’améliorations, documentation et FAQ</li>
+                    <li>Evolution vers management d’équipe</li>
+                </ul>
+            </div>
+            <div class="experience">
+                <h3>Technicien Support Proximité (Mission Groupe Hermès)</h3>
+                <h4>Consort NT, Paris | Juin 2022 à oct. 2022</h4>
+                <ul>
+                    <li>Préparation/Masterisation des postes de travail</li>
+                    <li>Gestion logistique : préparation des colis à expédier sur les sites et remise aux équipes chargées des expéditions</li>
+                    <li>Mise à jour quotidienne du reporting d’avancement pour sécuriser les déploiements</li>
+                    <li>Recette des installations effectuées & rédaction</li>
+                </ul>
+            </div>
+            <div class="experience">
+                <h3>Technicien Support (Help Desk) Mission SFR</h3>
+                <h4>Consort NT, Paris | Mars 2022 à juin 2022</h4>
+                <ul>
+                    <li>Répondre à Utilisateur par téléphone</li>
+                    <li>Création de ticket sur logiciel de ticketing</li>
+                    <li>Diagnostique et résoudre le problème</li>
+                    <li>Installation de matériel informatique</li>
+                    <li>Escalader le ticket au niveau supérieur</li>
+                </ul>
+            </div>
+            <div class="experience">
+                <h3>G2R-Formation</h3>
+                <h4>Centre de Formation, Paris XI | Juin 2021 à déc. 2021</h4>
+                <ul>
+                    <li>Assistance aux utilisateurs</li>
+                    <li>Installation et configuration de poste informatique</li>
+                    <li>Active Directory (Création d’utilisateur, attributions de droit et gestion de GPO)</li>
+                    <li>Déploiement de poste de travail</li>
+                    <li>Gestion d'imprimante</li>
+                </ul>
+            </div>
+            <div class="experience">
+                <h3>Travailleur Solidaire</h3>
+                <h4>Emmaüs, Paris | Févr. 2017 à juin 2021</h4>
+                <ul>
+                    <li>Gestion de la boutique informatique et réception des matériels informatiques</li>
+                    <li>Contrôle et réparation de l'équipement informatique</li>
+                    <li>Estimation et définition des prix de ventes</li>
+                    <li>Mise en rayon des objets informatiques</li>
+                </ul>
             </div>
         </div>
         <footer>
