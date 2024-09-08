@@ -109,6 +109,8 @@
     <div class="step">
         <h2>Étape 6 : Créer un superutilisateur pour CISO Assistant</h2>
         <p>Pour créer un compte administrateur, vous devez exécuter la commande suivante dans le conteneur backend :</p>
+        <pre><code>docker ps</code></pre>
+        <p>Cette commande vous permet de lister tous les conteneurs en cours d'exécution. Identifiez le conteneur qui s'appelle <code>backend</code> (ou un nom similaire) et exécutez cette commande pour créer le superutilisateur :</p>
         <pre><code>docker exec -it backend python manage.py createsuperuser</code></pre>
         <p>Suivez les instructions pour fournir un email, un nom d'utilisateur et un mot de passe.</p>
     </div>
@@ -118,6 +120,15 @@
         <p>Ouvrez votre navigateur et accédez à l'interface web à l'adresse suivante :</p>
         <pre><code>https://localhost:8443/</code></pre>
         <p>Connectez-vous avec les identifiants créés à l'étape précédente.</p>
+    </div>
+
+    <div class="step">
+        <h2>Étape 8 : Références supplémentaires</h2>
+        <ul>
+            <li>Site officiel de Docker : <a href="https://www.docker.com/">https://www.docker.com/</a></li>
+            <li>GitHub du projet CISO Assistant : <a href="https://github.com/intuitem/ciso-assistant-community">https://github.com/intuitem/ciso-assistant-community</a></li>
+            <li>Documentation Git : <a href="https://git-scm.com/doc">https://git-scm.com/doc</a></li>
+        </ul>
     </div>
 </div>
 
